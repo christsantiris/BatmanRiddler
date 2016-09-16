@@ -1,4 +1,4 @@
-# React-Router Trivia Game
+#Trivia Game
 ## Features
 
 - React

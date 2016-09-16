@@ -17,10 +17,14 @@ class Game extends Component {
   }
   render () {
     if (this.state.questions.length > 0) {
+      const { questions } = this.state
+      const [a, b, c, d] = [questions[0].correct_answer, ...questions[0].incorrect_answers]
+      const array = [a, b, c, d]
+      console.log(array)
       this.state.questions.map((questions, index) => {
       })
       return <div className='gamescreen'>
-        <h2>Here is the first riddle:</h2>
+        <h2>Here is the your riddle:</h2>
         <p>
           <span dangerouslySetInnerHTML={{__html: this.state.questions[0].question}} />
         </p>
