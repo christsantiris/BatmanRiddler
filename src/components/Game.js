@@ -9,23 +9,25 @@ class Game extends Component {
     }
   }
   componentWillMount () {
-    window.fetch(`http://jservice.io/api/random?count=10`)
+    window.fetch(`https://jsonp.afeld.me/?url=http://www.opentdb.com/api.php?amount=1&difficulty=easy&type=multiple`)
        .then((resp) => { return resp.json() })
        .then((data) => {
-         this.setState({ questions: data })
+         this.setState({ questions: data.results })
        })
-  }
-  onAnswer = (newGuess) => {
-    const newAnswer = this.state.answer
   }
   render () {
     if (this.state.questions.length > 0) {
       this.state.questions.map((questions, index) => {
       })
       return <div className='gamescreen'>
-        <h2>This is the start page</h2>
-        <p>{this.state.questions[0].question}</p>
-        <input onGuess={this.onAnser}></input>
+        <h2>Here is the first riddle:</h2>
+        <p>
+          <span dangerouslySetInnerHTML={{__html: this.state.questions[0].question}} />
+        </p>
+        <button>{this.state.questions[0].correct_answer}</button>
+        <button>{this.state.questions[0].incorrect_answers[0]}</button>
+        <button>{this.state.questions[0].incorrect_answers[1]}</button>
+        <button>{this.state.questions[0].incorrect_answers[2]}</button>
       </div>
     } else {
       return <p>Loading...</p>
