@@ -4,7 +4,7 @@ import { Link } from 'react-router'
 class App extends Component {
 
   render () {
-    return <div>
+    return <div className='startscreen'>
       <h1>Batman vs The Riddler!</h1>
       <nav>
         <ul>
