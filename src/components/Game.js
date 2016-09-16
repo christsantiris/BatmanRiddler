@@ -20,6 +20,20 @@ class Game extends Component {
       const { questions } = this.state
       const [a, b, c, d] = [questions[0].correct_answer, ...questions[0].incorrect_answers]
       const array = [a, b, c, d]
+      function shuffle(array) {
+        let t
+        let i
+        // While there remain elements to shuffle…
+        while (array.length) {
+          // Pick a remaining element…
+          i = Math.floor(Math.random() * array.length--)
+          // And swap it with the current element.
+          t = array[array.length]
+          array[array.length] = array[i]
+          array[i] = t
+        }
+        return array
+      }
       console.log(array)
       this.state.questions.map((questions, index) => {
       })
