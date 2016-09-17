@@ -5,4 +5,4 @@
 - If Batman solves the riddle, he travels up
 - If Batman can't solve the riddle, he travels left
 - If correct.length === 5, Batman wins
--If correct.length === 5, The Riddler wins
+- If incorrect.length === 5, The Riddler wins
