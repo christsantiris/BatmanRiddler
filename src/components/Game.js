@@ -20,21 +20,22 @@ class Game extends Component {
       const { questions } = this.state
       const [a, b, c, d] = [questions[0].correct_answer, ...questions[0].incorrect_answers]
       const array = [a, b, c, d]
-      function shuffle(array) {
+      const shuffle = (array) => {
+        let m = array.length
         let t
         let i
         // While there remain elements to shuffle…
-        while (array.length) {
+        while (m) {
           // Pick a remaining element…
-          i = Math.floor(Math.random() * array.length--)
+          i = Math.floor(Math.random() * m--)
           // And swap it with the current element.
-          t = array[array.length]
-          array[array.length] = array[i]
+          t = array[m]
+          array[m] = array[i]
           array[i] = t
         }
+        console.log(array)
         return array
       }
-      console.log(array)
       this.state.questions.map((questions, index) => {
       })
       return <div className='gamescreen'>
@@ -42,10 +43,10 @@ class Game extends Component {
         <p>
           <span dangerouslySetInnerHTML={{__html: this.state.questions[0].question}} />
         </p>
-        <button>{this.state.questions[0].correct_answer}</button>
-        <button>{this.state.questions[0].incorrect_answers[0]}</button>
-        <button>{this.state.questions[0].incorrect_answers[1]}</button>
-        <button>{this.state.questions[0].incorrect_answers[2]}</button>
+        {shuffle([<button>{this.state.questions[0].correct_answer}</button>,
+          <button>{this.state.questions[0].incorrect_answers[0]}</button>,
+          <button>{this.state.questions[0].incorrect_answers[1]}</button>,
+          <button>{this.state.questions[0].incorrect_answers[2]}</button>])}
       </div>
     } else {
       return <p>Loading...</p>

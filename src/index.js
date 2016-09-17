@@ -5,7 +5,8 @@ import { Router, Route, browserHistory } from 'react-router'
 import {
   App,
   Start,
-  Game
+  Game,
+  Board
 } from './components'
 
 import './styles/screen.sass'
@@ -15,6 +16,7 @@ render((
     <Route component={App}>
       <Route path='/' component={Start} />
       <Route path='/game' component={Game} />
+      <Route path='/board' component={Board} />
     </Route>
   </Router>
 ), document.getElementById('root'))

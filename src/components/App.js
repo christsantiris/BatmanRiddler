@@ -10,6 +10,7 @@ class App extends Component {
         <ul>
           <li><Link to='/'>Start</Link></li>
           <li><Link to='/game'>Game</Link></li>
+          <li><Link to='/board'>Board</Link></li>
         </ul>
       </nav>
       <main>
