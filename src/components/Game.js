@@ -9,7 +9,7 @@ class Game extends Component {
     }
   }
   componentWillMount () {
-    window.fetch(`https://jsonp.afeld.me/?url=http://www.opentdb.com/api.php?amount=1&difficulty=easy&type=multiple`)
+    window.fetch(`https://jsonp.afeld.me/?url=http://www.opentdb.com/api.php?amount=1&difficulty=hard&type=multiple`)
        .then((resp) => { return resp.json() })
        .then((data) => {
          this.setState({ questions: data.results })
