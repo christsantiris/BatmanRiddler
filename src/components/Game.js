@@ -6,7 +6,9 @@ class Game extends Component {
     super()
     this.state = {
       questions: [],
-      difficulty: 'Hard'
+      difficulty: 'Hard',
+      correct: [],
+      incorrect: []
     }
   }
 
