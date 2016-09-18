@@ -8,28 +8,28 @@ class Board extends Component {
         <table>
           <tbody>
             <tr>
-              <td className='riddler'><Link to='/game'>The Riddlers Hideout</Link></td>
-              <td className='joker'><Link to='/game'>The Joker's Hideout</Link></td>
-              <td className='penguin'><Link to='/game'>The Penguin's Nightclub</Link></td>
-              <td className='falcone'><Link to='/game'>Don Falcone's Italian Restaurant</Link></td>
+              <Link to='/game'><td className='riddler'></td></Link>
+              <Link to='/game'><td className='joker'></td></Link>
+              <Link to='/game'><td className='penguin'></td></Link>
+              <Link to='/game'><td className='falcone'></td></Link>
             </tr>
             <tr>
-              <td className='cityhall'><Link to='/game'>City Hall</Link></td>
-              <td className='arkham'><Link to='/game'>Arkham Asylum</Link></td>
-              <td className='sewer'><Link to='/game'>The Sewer System</Link></td>
-              <td className='warehouse'><Link to='/game'>An Abandoned Warehouse</Link></td>
+              <Link to='/game'><td className='cityhall'></td></Link>
+              <Link to='/game'><td className='arkham'></td></Link>
+              <Link to='/game'><td className='sewer'></td></Link>
+              <Link to='/game'><td className='warehouse'></td></Link>
             </tr>
             <tr>
-              <td className='powerplant'><Link to='/game'>The Power Plant</Link></td>
-              <td className='police'><Link to='/game'>The Police Station</Link></td>
-              <td className='hospital'><Link to='/game'>The Hospital</Link></td>
-              <td className='park'><Link to='/game'>The Amusement Park</Link></td>
+              <Link to='/game'><td className='powerplant'></td></Link>
+              <Link to='/game'><td className='police'></td></Link>
+              <Link to='/game'><td className='hospital'></td></Link>
+              <Link to='/game'><td className='park'></td></Link>
             </tr>
             <tr>
-              <td className='port'><Link to='/game'>The Port</Link></td>
-              <td className='wayne'><Link to='/game'>Wayne Enterprises</Link></td>
-              <td className='bank'><Link to='/game'>The Bank</Link></td>
-              <td className='crimescene'><Link to='/game'>The Crime Scene</Link></td>
+              <Link to='/game'><td className='port'></td></Link>
+              <Link to='/game'><td className='wayne'></td></Link>
+              <Link to='/game'><td className='bank'></td></Link>
+              <Link to='/game'><td className='crimescene'></td></Link>
             </tr>
           </tbody>
         </table>
