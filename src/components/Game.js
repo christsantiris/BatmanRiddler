@@ -5,9 +5,11 @@ class Game extends Component {
   constructor () {
     super()
     this.state = {
-      questions: []
+      questions: [],
+      difficulty: 'Hard'
     }
   }
+
   componentWillMount () {
     window.fetch(`https://jsonp.afeld.me/?url=http://www.opentdb.com/api.php?amount=1&difficulty=hard&type=multiple`)
        .then((resp) => { return resp.json() })
