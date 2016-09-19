@@ -7,8 +7,7 @@ class Game extends Component {
     this.state = {
       questions: [],
       difficulty: 'Hard',
-      correct: [],
-      incorrect: []
+
     }
   }
 
