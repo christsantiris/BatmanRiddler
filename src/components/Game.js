@@ -7,10 +7,6 @@ class Game extends Component {
     incrementIncorrect: React.PropTypes.func
   }
 
-  componentDidUpdate () {
-
-  }
-
   render () {
     if (this.props.questions.length > 0) {
       const { questions } = this.props
@@ -35,8 +31,6 @@ class Game extends Component {
       })
       return <div className='gamescreen'>
         <h2>Here is the your riddle:</h2>
-        {/* <div className='correct'>{this.state.correctAnswers}</div>
-        <div className='incorrect'>{this.state.incorrectAnswers}</div> */}
         <p>
           <span dangerouslySetInnerHTML={{__html: this.props.questions[0].question}} />
         </p>
