@@ -12,7 +12,9 @@ class App extends Component {
       questions: [],
       difficulty: 'easy',
       correctAnswers: 0,
-      incorrectAnswers: 0
+      incorrectAnswers: 0,
+      win: false,
+      lose: false
     }
   }
 
@@ -36,11 +38,13 @@ class App extends Component {
   }
 
   incrementCorrect = () => {
-    this.setState({ correctAnswers: this.state.correctAnswers + 1 })
+    const newScore = this.state.correctAnswers + 1
+    this.setState({ correctAnswers: newScore, win: newScore >= 5 })
   }
 
   incrementIncorrect = () => {
-    this.setState({ incorrectAnswers: this.state.incorrectAnswers + 1 })
+    const newScore = this.state.incorrectAnswers + 1
+    this.setState({ incorrectAnswers: newScore, lose: newScore >= 5 })
   }
 
   render () {
@@ -48,7 +52,7 @@ class App extends Component {
       <h1>Batman vs The Riddler!</h1>
       <div className='correct'>Correct Answers: {this.state.correctAnswers}</div>
       <div className='incorrect'>Incorrect Answers: {this.state.incorrectAnswers}</div>
-          {React.cloneElement(this.props.children, { setDifficulty: this.setDifficulty, startGame: this.startGame, questions: this.state.questions, difficulty: this.state.difficulty, incrementCorrect: this.incrementCorrect, incrementIncorrect: this.incrementIncorrect })}
+      {React.cloneElement(this.props.children, { setDifficulty: this.setDifficulty, startGame: this.startGame, questions: this.state.questions, difficulty: this.state.difficulty, incrementCorrect: this.incrementCorrect, incrementIncorrect: this.incrementIncorrect })}
     </div>
   }
 }

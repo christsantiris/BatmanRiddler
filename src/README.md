@@ -5,3 +5,4 @@
 - If correct.length === 5, Batman wins
 - If incorrect.length === 5, The Riddler wins
 - Return to board state after riddle
+- Local storage for API data
