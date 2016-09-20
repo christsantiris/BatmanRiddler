@@ -37,28 +37,18 @@ class App extends Component {
 
   incrementCorrect = () => {
     this.setState({ correctAnswers: this.state.correctAnswers + 1 })
-    if (this.state.correctAnswers === 5) {
-      window.alert('You win')
-    }
   }
 
   incrementIncorrect = () => {
     this.setState({ incorrectAnswers: this.state.incorrectAnswers + 1 })
-    if (this.state.incorrectAnswers === 5) {
-      window.alert('You Lose')
-    }
   }
+
   render () {
     return <div className='startscreen'>
       <h1>Batman vs The Riddler!</h1>
-      <nav>
-        <ul>
-          <li><Link to='/'>Back</Link></li>
-        </ul>
-      </nav>
       <div className='correct'>Correct Answers: {this.state.correctAnswers}</div>
       <div className='incorrect'>Incorrect Answers: {this.state.incorrectAnswers}</div>
-        {React.cloneElement(this.props.children, { setDifficulty: this.setDifficulty, startGame: this.startGame, questions: this.state.questions, difficulty: this.state.difficulty, incrementCorrect: this.incrementCorrect, incrementIncorrect: this.incrementIncorrect })}
+          {React.cloneElement(this.props.children, { setDifficulty: this.setDifficulty, startGame: this.startGame, questions: this.state.questions, difficulty: this.state.difficulty, incrementCorrect: this.incrementCorrect, incrementIncorrect: this.incrementIncorrect })}
     </div>
   }
 }
