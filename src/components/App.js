@@ -40,11 +40,17 @@ class App extends Component {
   incrementCorrect = () => {
     const newScore = this.state.correctAnswers + 1
     this.setState({ correctAnswers: newScore, win: newScore >= 5 })
+    if (newScore >= 5) {
+      window.alert('You Win')
+    }
   }
 
   incrementIncorrect = () => {
     const newScore = this.state.incorrectAnswers + 1
     this.setState({ incorrectAnswers: newScore, lose: newScore >= 5 })
+    if (newScore >= 5) {
+      window.alert('You Lose')
+    }
   }
 
   render () {
