@@ -10,18 +10,22 @@ body
   @include font-smoothing(on)
   margin: 0
   background-image: url('../images/the_riddler.jpg')
-  background-repeat: no-repeat
   background-size: cover
-  background-position: left
-  background-color: #333
+  background-position: top
+  background-repeat: no-repeat
+  height: 100%
+:root
+  height: 100%
 nav
   ul
     li
       list-style: none
 .startscreen
   text-align: center
+  height: 100%
 .startgame
   color: white
+  height: 100%
 .batman
   background-image: url('http://static1.comicvine.com/uploads/original/11112/111120432/5123629-6064836017-76013.png')
   background-repeat: no-repeat
@@ -41,10 +45,13 @@ nav
     font-family: fantasy
     font-size: 20px
 .board
+  width: 50%
+  height: 100vh
   display: flex
   flex-wrap: wrap
-  margin: 20px
-  width: 60%
+  a
+    width: 25%
+    height: 25%
   .crimescene
     background-image: url('http://goldsborodailynews.com/wp-content/uploads/Crime-Scene-Body-Outline-Image-300x300.png')
   .bank
@@ -81,9 +88,8 @@ nav
   background-size: cover
   background-repeat: no-repeat
   background-position: center
-  height: 200px
-  width: 200px
   color: white
   display: flex
-  flex-direction: column
   justify-content: flex-end
+  height: 100%
+  margin: 0

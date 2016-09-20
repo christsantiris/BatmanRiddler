@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
 
 class Game extends Component {
+  static propTypes = {
+    questions: React.PropTypes.array,
+    incrementCorrect: React.PropTypes.func,
+    incrementIncorrect: React.PropTypes.func
+  }
 
-  // constructor () {
-  //   super()
-  //   this.state = {
-  //     questions: this.state,
-  //     difficulty: ''
-  //   }
-  // }
+  componentDidUpdate () {
+
+  }
 
   render () {
     if (this.props.questions.length > 0) {
@@ -28,20 +29,21 @@ class Game extends Component {
           array[m] = array[i]
           array[i] = t
         }
-        console.log(array)
         return array
       }
       this.props.questions.map((questions, index) => {
       })
       return <div className='gamescreen'>
         <h2>Here is the your riddle:</h2>
+        {/* <div className='correct'>{this.state.correctAnswers}</div>
+        <div className='incorrect'>{this.state.incorrectAnswers}</div> */}
         <p>
           <span dangerouslySetInnerHTML={{__html: this.props.questions[0].question}} />
         </p>
-        {shuffle([<button>{this.props.questions[0].correct_answer}</button>,
-          <button>{this.props.questions[0].incorrect_answers[0]}</button>,
-          <button>{this.props.questions[0].incorrect_answers[1]}</button>,
-          <button>{this.props.questions[0].incorrect_answers[2]}</button>])}
+        {shuffle([<button onClick={this.props.incrementCorrect}>{this.props.questions[0].correct_answer}</button>,
+          <button onClick={this.props.incrementIncorrect}>{this.props.questions[0].incorrect_answers[0]}</button>,
+          <button onClick={this.props.incrementIncorrect}>{this.props.questions[0].incorrect_answers[1]}</button>,
+          <button onClick={this.props.incrementIncorrect}>{this.props.questions[0].incorrect_answers[2]}</button>])}
       </div>
     } else {
       return <p>Loading...</p>

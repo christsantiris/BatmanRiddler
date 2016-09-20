@@ -1,6 +1,12 @@
 import React, { Component } from 'react'
 
 class Start extends Component {
+
+  static propTypes = {
+    startGame: React.PropTypes.func,
+    setDifficulty: React.PropTypes.func
+  }
+
   render () {
     return <div className='startgame'>
       <p>Can you help Batman solve the Riddler's riddles?</p>

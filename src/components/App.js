@@ -2,11 +2,17 @@ import React, { Component } from 'react'
 import { Link, browserHistory } from 'react-router'
 
 class App extends Component {
+  static propTypes = {
+    children: React.PropTypes.object.isRequired
+  }
+
   constructor (props) {
     super(props)
     this.state = {
       questions: [],
-      difficulty: 'easy'
+      difficulty: 'easy',
+      correctAnswers: 0,
+      incorrectAnswers: 0
     }
   }
 
@@ -29,6 +35,14 @@ class App extends Component {
     this.setState({difficulty: event.target.value})
   }
 
+  incrementCorrect = () => {
+    this.setState({ correctAnswers: this.state.correctAnswers + 1 })
+  }
+
+  incrementIncorrect = () => {
+    this.setState({ incorrectAnswers: this.state.incorrectAnswers + 1 })
+  }
+
   render () {
     return <div className='startscreen'>
       <h1>Batman vs The Riddler!</h1>
@@ -37,9 +51,9 @@ class App extends Component {
           <li><Link to='/'>Back</Link></li>
         </ul>
       </nav>
-      <main>
-        {this.props.children && React.cloneElement(this.props.children, {setDifficulty: this.setDifficulty, startGame: this.startGame, questions: this.state.questions, difficulty: this.state.difficulty})}
-      </main>
+      <div className='correct'>{this.state.correctAnswers}</div>
+      <div className='incorrect'>{this.state.incorrectAnswers}</div>
+        {React.cloneElement(this.props.children, { setDifficulty: this.setDifficulty, startGame: this.startGame, questions: this.state.questions, difficulty: this.state.difficulty, incrementCorrect: this.incrementCorrect, incrementIncorrect: this.incrementIncorrect })}
     </div>
   }
 }
