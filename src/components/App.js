@@ -1,16 +1,17 @@
 import React, { Component } from 'react'
-import { Link, browserHistory } from 'react-router'
+import { browserHistory } from 'react-router'
 
 class App extends Component {
   static propTypes = {
-    children: React.PropTypes.object.isRequired
+    children: React.PropTypes.object.isRequired,
+    params: React.PropTypes.object
   }
 
   constructor (props) {
     super(props)
     this.state = {
       questions: [],
-      difficulty: 'easy',
+      difficulty: props.params.difficulty,
       correctAnswers: 0,
       incorrectAnswers: 0,
       win: false,
@@ -20,14 +21,14 @@ class App extends Component {
 
   startGame = () => {
     let difficulty = this.state.difficulty
-    let headers = new Headers();
-    headers.append('Authorization', 'Bearer Chris')
     let url = `https://beoderp.herokuapp.com/${difficulty}questions`
-    window.fetch(url, {method: 'GET', headers: headers})
+    window.fetch(url, { method: 'GET', headers: { 'Authorization': 'Bearer Chris' } })
        .then((resp) => { return resp.json() })
        .then((data) => {
          this.setState({ questions: data })
-         browserHistory.push('/board')
+         if (!this.props.params.difficulty) {
+           browserHistory.push(`/game/${difficulty}`)
+         }
        })
   }
 
@@ -41,7 +42,7 @@ class App extends Component {
     if (newScore >= 5) {
       window.alert('You Win')
     } else if (newScore) {
-      window.alert('Nice')
+      browserHistory.push(`/game/${this.state.difficulty}`)
     }
   }
 
@@ -51,7 +52,7 @@ class App extends Component {
     if (newScore >= 5) {
       window.alert('You Lose')
     } else if (newScore) {
-      window.alert('No')
+      browserHistory.push(`/game/${this.state.difficulty}`)
     }
   }
 

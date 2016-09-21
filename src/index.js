@@ -15,8 +15,8 @@ render((
   <Router history={browserHistory}>
     <Route component={App}>
       <Route path='/' component={Start} />
-      <Route path='/board' component={Board} />
-      <Route path='/game' component={Game} />
+      <Route path='/game/:difficulty' component={Board} />
+      <Route path='/game/:difficulty/:index' component={Game} />
     </Route>
   </Router>
 ), document.getElementById('root'))
