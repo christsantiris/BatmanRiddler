@@ -1,8 +1,7 @@
 #Batman vs The Riddlers
 #TODO
-- If Batman solves the riddle, he travels up
+- Notify user of correct or incorrect answer after increment
+- If Batman solves the riddle, he travels up or disable div
 - If Batman can't solve the riddle, he travels left
-- If correct.length === 5, Batman wins
-- If incorrect.length === 5, The Riddler wins
 - Return to board state after riddle
 - Local storage for API data

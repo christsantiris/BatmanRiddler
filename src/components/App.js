@@ -19,13 +19,10 @@ class App extends Component {
   }
 
   startGame = () => {
-    const baseUrl = 'https://jsonp.afeld.me/?'
-    let url = 'http://www.opentdb.com/api.php?'
+    let url = ' https://beoderp.herokuapp.com/questions'
     let amount = 16
     let difficulty = this.state.difficulty
-    let type = 'multiple'
-    let dataUrl = baseUrl.concat('url=', url, 'amount=', amount, '&', 'difficulty=', difficulty, '&', 'type=', type)
-    window.fetch(dataUrl)
+    window.fetch(url)
        .then((resp) => { return resp.json() })
        .then((data) => {
          this.setState({ questions: data.results })
@@ -42,6 +39,8 @@ class App extends Component {
     this.setState({ correctAnswers: newScore, win: newScore >= 5 })
     if (newScore >= 5) {
       window.alert('You Win')
+    } else if (newScore) {
+      window.alert('Nice')
     }
   }
 
@@ -50,6 +49,8 @@ class App extends Component {
     this.setState({ incorrectAnswers: newScore, lose: newScore >= 5 })
     if (newScore >= 5) {
       window.alert('You Lose')
+    } else if (newScore) {
+      window.alert('No')
     }
   }
 

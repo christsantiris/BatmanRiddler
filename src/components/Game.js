@@ -11,8 +11,6 @@ class Game extends Component {
   }
 
   render () {
-    console.log(this.props)
-    console.log(this.state)
     if (this.props.questions.length > 0) {
       const { questions } = this.props
       const [a, b, c, d] = [questions[0].correct_answer, ...questions[0].incorrect_answers]
