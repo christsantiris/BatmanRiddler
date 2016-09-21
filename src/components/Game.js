@@ -34,7 +34,7 @@ class Game extends Component {
       this.props.questions.map((questions, index) => {
       })
       return <div className='gamescreen'>
-        <button><Link to='/start'><button>Back</button></Link></button>
+        <button><Link to='/board'><button>Back</button></Link></button>
         <h2>Here is the your riddle:</h2>
         <p>
           <span dangerouslySetInnerHTML={{__html: this.props.questions[0].question}} />

@@ -19,14 +19,13 @@ class App extends Component {
   }
 
   startGame = () => {
+    let difficulty = this.state.difficulty
     let headers = new Headers();
-    headers.append("Authorization", "Bearer Chris")
-
-    let url = ' https://beoderp.herokuapp.com/questions'
-    window.fetch(url, {method: "GET", headers: headers})
+    headers.append('Authorization', 'Bearer Chris')
+    let url = `https://beoderp.herokuapp.com/${difficulty}questions`
+    window.fetch(url, {method: 'GET', headers: headers})
        .then((resp) => { return resp.json() })
        .then((data) => {
-         console.log(data)
          this.setState({ questions: data })
          browserHistory.push('/board')
        })
