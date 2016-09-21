@@ -31,7 +31,7 @@ class Board extends Component {
           </div>
         </Link>
       })}
-        <footer><Link to='/'><button>Back</button></Link></footer>
+        <footer><Link to='/start'><button>Back</button></Link></footer>
       </div>
     )
   }
