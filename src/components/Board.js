@@ -3,29 +3,79 @@ import { Link } from 'react-router'
 import cx from 'classnames'
 
 const cells = [
-{className: 'riddler'},
-{className: 'joker'},
-{className: 'penguin'},
-{className: 'arkham'},
-{className: 'crimescene'},
-{className: 'port'},
-{className: 'bank'},
-{className: 'falcone'},
-{className: 'wayne'},
-{className: 'park'},
-{className: 'powerplant'},
-{className: 'warehouse'},
-{className: 'sewer'},
-{className: 'cityhall'},
-{className: 'police'},
-{className: 'hospital'}
+  {
+    className: 'riddler',
+    location: 'The Riddler\'s Hideout'
+  },
+  {
+    className: 'joker',
+    location: 'The Joker\'s Hideout'
+  },
+  {
+    className: 'penguin',
+    location: 'The Penguin\'s Hideout'
+  },
+  {
+    className: 'arkham',
+    location: 'Arkham Asylum'
+  },
+  {
+    className: 'crimescene',
+    location: 'The Crime Scene'
+  },
+  {
+    className: 'port',
+    location: 'Gotham City Port'
+  },
+  {
+    className: 'bank',
+    location: 'Gotham City Bank'
+  },
+  {
+    className: 'falcone',
+    location: 'Don Falcone\'s Restaurant'
+  },
+  {
+    className: 'wayne',
+    location: 'Wayne Enterprises'
+  },
+  {
+    className: 'park',
+    location: 'Gotham Amusement Park'
+  },
+  {
+    className: 'powerplant',
+    location: 'Gotham Power Plant'
+
+  },
+  {
+    className: 'warehouse',
+    location: 'An Abandoned Warehouse'
+  },
+  {
+    className: 'sewer',
+    location: 'Gotham City Sewer'
+  },
+  {
+    className: 'cityhall',
+    location: 'Gotham City Hall'
+  },
+  {
+    className: 'police',
+    location: 'GCPD'
+  },
+  {
+    className: 'hospital',
+    location: 'Gotham Hospital'
+  }
 
 ]
 class Board extends Component {
 
   static propTypes = {
     startGame: React.PropTypes.func,
-    questions: React.PropTypes.array
+    questions: React.PropTypes.array,
+    params: React.PropTypes.object
   }
 
   componentDidMount () {
@@ -39,7 +89,7 @@ class Board extends Component {
       <div className='board'>
       {cells.map((cell, index) => {
         return <Link to={`/game/${this.props.params.difficulty}/${index}`} key={index}>
-          <div className={cx(cell.className, 'cell')} />
+          <div className={cx(cell.className, 'cell')}><p>{cell.location}</p></div>
         </Link>
       })}
         <footer><Link to='/'><button>Back</button></Link></footer>
