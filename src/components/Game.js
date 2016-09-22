@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link, browserHistory } from 'react-router'
+import { Link } from 'react-router'
 import { shuffle } from '../utility'
 
 class Game extends Component {
@@ -11,7 +11,8 @@ class Game extends Component {
     incrementIncorrect: React.PropTypes.func,
     correctAnswers: React.PropTypes.number,
     incorrectAnswers: React.PropTypes.number,
-    startGame: React.PropTypes.func
+    startGame: React.PropTypes.func,
+    enableDiv: React.PropTypes.func
   }
 
   componentDidMount () {
@@ -19,15 +20,10 @@ class Game extends Component {
       this.props.startGame()
     }
   }
-  enableDiv = (index, cells) => {
-    cells[index].clicked = false
-    browserHistory.push(`/game/${this.props.params.difficulty}/${index}`)
-  }
   render () {
     const question = this.props.questions[this.props.params.index]
     if (this.props.questions.length > 0) {
       return <div className='gamescreen'>
-        <Link to={`/game/${this.props.params.difficulty}`}><button>Back</button></Link>
         <h2>Here is the your riddle:</h2>
         <p>
           <span dangerouslySetInnerHTML={{__html: question.question}} />
@@ -40,7 +36,7 @@ class Game extends Component {
         ])}
       </div>
     } else {
-      return <p>Loading...</p>
+      return <Link to={`/game/${this.props.params.difficulty}`} onClick={(index) => this.disableDiv()}><button>Back</button></Link>
     }
   }
 }

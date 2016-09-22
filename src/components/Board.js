@@ -102,6 +102,10 @@ class Board extends Component {
     cells[index].clicked = true
     browserHistory.push(`/game/${this.props.params.difficulty}/${index}`)
   }
+  enableDiv = (index, cells) => {
+    cells[index].clicked = false
+    browserHistory.push(`/game/${this.props.params.difficulty}/${index}`)
+  }
   render () {
     return (
       <div className='gotham'>
@@ -109,7 +113,7 @@ class Board extends Component {
       {cells.map((cell, index) => {
         if (cell.clicked) {
           return <Link key={index} onClick={(e) => e.preventDefault()}>
-            <div className={cx(cell.className, 'cell')}><p>{cell.location}</p></div>
+            <div className='empty'><p>{cell.location}</p></div>
           </Link>
         } else {
           return <Link key={index} onClick={() => this.disableDiv(index)}>
