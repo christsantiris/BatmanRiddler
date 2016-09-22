@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
+import { Link, browserHistory } from 'react-router'
 import { shuffle } from '../utility'
 
 class Game extends Component {
@@ -19,7 +19,10 @@ class Game extends Component {
       this.props.startGame()
     }
   }
-
+  enableDiv = (index, cells) => {
+    cells[index].clicked = false
+    browserHistory.push(`/game/${this.props.params.difficulty}/${index}`)
+  }
   render () {
     const question = this.props.questions[this.props.params.index]
     if (this.props.questions.length > 0) {
