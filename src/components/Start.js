@@ -18,7 +18,7 @@ class Start extends Component {
       <div className='batman'>
         Batman
       </div>
-      <button onClick={this.props.startGame}>Start</button>
+      <button className='startbutton' onClick={this.props.startGame}>Start</button>
     </div>
   }
 }

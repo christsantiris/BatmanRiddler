@@ -86,13 +86,15 @@ class Board extends Component {
 
   render () {
     return (
-      <div className='board'>
+      <div className='gotham'>
+        <div className='board'>
       {cells.map((cell, index) => {
         return <Link to={`/game/${this.props.params.difficulty}/${index}`} key={index}>
           <div className={cx(cell.className, 'cell')}><p>{cell.location}</p></div>
         </Link>
       })}
-        <footer><Link to='/'><button>Back</button></Link></footer>
+        </div>
+        <footer><Link to='/'><button className='backbutton'>Back</button></Link></footer>
       </div>
     )
   }

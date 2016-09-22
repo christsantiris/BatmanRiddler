@@ -9,10 +9,6 @@ html
 body
   @include font-smoothing(on)
   margin: 0
-  background-image: url('../images/the_riddler.jpg')
-  background-size: cover
-  background-position: top
-  background-repeat: no-repeat
   height: 100%
 :root
   height: 100%
@@ -20,12 +16,37 @@ nav
   ul
     li
       list-style: none
+.correct
+  color: white
+  font-size: 2em
+.incorrect
+  color: white
+  font-size: 2em
 .startscreen
   text-align: center
   height: 100%
+  background-color: #555450
 .startgame
   color: white
   height: 100%
+  background-image: url('../images/the_riddler.jpg')
+  height: 100vh
+  p
+    font-size: 2em
+.startbutton
+  height: 2em
+  width: 4em
+  background-color: #5DCA6F
+  color: white
+  font-size: 1em
+  border-radius: 10px
+.backbutton
+    height: 3em
+    width: 4em
+    background-color: #5DCA6F
+    color: white
+    font-size: 1em
+    border-radius: 10px
 .batman
   background-image: url('http://static1.comicvine.com/uploads/original/11112/111120432/5123629-6064836017-76013.png')
   background-repeat: no-repeat
@@ -40,19 +61,31 @@ nav
   flex-direction: column
   align-items: center
   align-content: center
+  background-image: url('../images/the_riddler.jpg')
+  height: 100vh
+  width: 100vw
+  background-position: center
+  background-size: cover
+  background-repeat: no-repeat
   p
     color: white
     font-family: fantasy
     font-size: 20px
+.gotham
+  background-image: url('../images/the_riddler.jpg')
+  background-repeat: no-repeat
 .board
   width: 50%
   height: 100vh
   display: flex
   flex-wrap: wrap
-  border: 15px solid black
+  padding-bottom: 5px
+  // border: 15px solid black
   a
     width: 25%
     height: 25%
+  a:visited
+    display: none
   .crimescene
     background-image: url('http://goldsborodailynews.com/wp-content/uploads/Crime-Scene-Body-Outline-Image-300x300.png')
   .bank
@@ -90,14 +123,18 @@ nav
   background-repeat: no-repeat
   background-position: center
   color: white
-  height: 90%
+  height: 100%
   display: flex
   flex-direction: column
   justify-content: flex-end
-  border-left: 15px solid black
-  border-right: 15px solid black
-  border-bottom: 15px solid black
-  border-top: 5px solid black
-  outline: yellow dashed
+  // border-left: 15px solid black
+  // border-right: 15px solid black
+  // border-bottom: 15px solid black
+  // border-top: 7px solid black
+  // outline: #ffff75 dashed
 p
   margin: 0
+footer
+  width: 100%
+  background-color: #555450
+  margin-top: -5px
