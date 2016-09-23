@@ -168,8 +168,28 @@ footer
   align-items: center
   background-repeat: no-repeat
   background-size: cover
+  height: 100%
   background-color: rgb(0, 255, 255)
   background-image: url('https://vocaloiid.files.wordpress.com/2011/07/youwin.jpg')
+  transform: translateY(0%)
+  transition: transform 0.25s linear
+  &.hidden
+    display: none
+.losemodal
+  position: absolute
+  top: 0
+  right: 0
+  left: 0
+  bottom: 0
+  display: flex
+  flex-direction: column
+  text-align: center
+  align-items: center
+  background-repeat: no-repeat
+  background-size: contain
+  background-position: center
+  background-color: #120302
+  background-image: url('http://sd.keepcalm-o-matic.co.uk/i/keep-calm-you-lose-i-win-5.png')
   transform: translateY(0%)
   transition: transform 0.25s linear
   &.hidden

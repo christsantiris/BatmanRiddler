@@ -62,6 +62,7 @@ class App extends Component {
       <div className='correct'>Correct Answers: {this.state.correctAnswers}</div>
       <div className='incorrect'>Incorrect Answers: {this.state.incorrectAnswers}</div>
       <div className='modal hidden' />
+      <div className='losemodal hidden' />
       {React.cloneElement(this.props.children, { setDifficulty: this.setDifficulty, startGame: this.startGame, questions: this.state.questions, difficulty: this.state.difficulty, incrementCorrect: this.incrementCorrect, incrementIncorrect: this.incrementIncorrect })}
     </div>
   }
