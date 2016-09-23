@@ -10,7 +10,7 @@ class Start extends Component {
   render () {
     return <div className='startgame'>
       <p>Can you help Batman solve the Riddler's riddles?</p>
-      <select onChange={this.props.setDifficulty}>
+      <select className='menu' onChange={this.props.setDifficulty}>
         <option value='easy'>Easy</option>
         <option value='medium'>Medium</option>
         <option value='hard'>Hard</option>

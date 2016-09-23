@@ -9,28 +9,13 @@ const cells = [
     clicked: false
   },
   {
-    className: 'joker',
-    location: 'The Joker\'s Hideout',
-    clicked: false
-  },
-  {
-    className: 'penguin',
-    location: 'The Penguin\'s Hideout',
+    className: 'port',
+    location: 'Gotham City Port',
     clicked: false
   },
   {
     className: 'arkham',
     location: 'Arkham Asylum',
-    clicked: false
-  },
-  {
-    className: 'crimescene',
-    location: 'The Crime Scene',
-    clicked: false
-  },
-  {
-    className: 'port',
-    location: 'Gotham City Port',
     clicked: false
   },
   {
@@ -60,8 +45,8 @@ const cells = [
 
   },
   {
-    className: 'warehouse',
-    location: 'An Abandoned Warehouse',
+    className: 'joker',
+    location: 'The Joker\'s Hideout',
     clicked: false
   },
   {
@@ -70,8 +55,18 @@ const cells = [
     clicked: false
   },
   {
+    className: 'warehouse',
+    location: 'An Abandoned Warehouse',
+    clicked: false
+  },
+  {
     className: 'cityhall',
     location: 'Gotham City Hall',
+    clicked: false
+  },
+  {
+    className: 'penguin',
+    location: 'The Penguin\'s Hideout',
     clicked: false
   },
   {
@@ -82,6 +77,11 @@ const cells = [
   {
     className: 'hospital',
     location: 'Gotham Hospital',
+    clicked: false
+  },
+  {
+    className: 'crimescene',
+    location: 'The Crime Scene',
     clicked: false
   }
 ]
