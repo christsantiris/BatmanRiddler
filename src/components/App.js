@@ -50,7 +50,7 @@ class App extends Component {
     const newScore = this.state.incorrectAnswers + 1
     this.setState({ incorrectAnswers: newScore, lose: newScore >= 5 })
     if (newScore >= 5) {
-      window.alert('You Lose')
+      document.querySelector('.losemodal.hidden').className = 'losemodal'
     } else if (newScore) {
       browserHistory.push(`/game/${this.state.difficulty}`)
     }

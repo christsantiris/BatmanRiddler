@@ -157,7 +157,7 @@ footer
   background-color: #555450
   margin-top: -5px
 .modal
-  position: absolute
+  position: fixed
   top: 0
   right: 0
   left: 0
@@ -168,7 +168,8 @@ footer
   align-items: center
   background-repeat: no-repeat
   background-size: cover
-  height: 100%
+  min-height: 100%
+  min-height: 100vh
   background-color: rgb(0, 255, 255)
   background-image: url('https://vocaloiid.files.wordpress.com/2011/07/youwin.jpg')
   transform: translateY(0%)
@@ -176,7 +177,7 @@ footer
   &.hidden
     display: none
 .losemodal
-  position: absolute
+  position: fixed
   top: 0
   right: 0
   left: 0
