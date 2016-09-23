@@ -11,7 +11,7 @@ class App extends Component {
     super(props)
     this.state = {
       questions: [],
-      difficulty: props.params.difficulty,
+      difficulty: props.params.difficulty || 'easy',
       correctAnswers: 0,
       incorrectAnswers: 0,
       win: false,
