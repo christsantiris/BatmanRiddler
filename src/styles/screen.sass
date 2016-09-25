@@ -54,8 +54,8 @@ select.menu
   background-size: cover
   background-repeat: no-repeat
   background-position: center
-  height: 4em
-  width: 7em
+  height: 6em
+  width: 9em
   border-radius: 10px
 .batman
   background-image: url('http://www.clipartkid.com/images/796/batman2-fOJb4F-clipart.png')
@@ -92,10 +92,9 @@ select.menu
   display: flex
   flex-wrap: wrap
   padding-bottom: 5px
-  // border: 15px solid black
   a
     width: 25%
-    height: 25%
+    height: 20%
   a:visited
     pointer-events:none
   .crimescene
@@ -105,6 +104,7 @@ select.menu
   .port
     background-image: url('http://vignette1.wikia.nocookie.net/newdcmovieuniverse/images/c/ce/Gcskyline.png/revision/latest?cb=20160223181953')
   .penguin
+    background-position: top
     background-image: url('http://vignette1.wikia.nocookie.net/batman/images/1/11/The_Penguin-Gotham1.jpg/revision/latest?cb=20140802145724')
   .falcone
     background-image: url('http://vignette2.wikia.nocookie.net/mafiagame/images/0/06/Italian_Garden_Restaurant_1.jpg/revision/latest?cb=20130309175242')
@@ -114,20 +114,28 @@ select.menu
     background-image: url('http://vignette3.wikia.nocookie.net/scoobydoo/images/1/1d/Gotham_City_Amusement_Park.png/revision/latest?cb=20150718094900')
   .powerplant
     background-image: url('https://enerdynamics.files.wordpress.com/2012/09/96242706.jpg')
+  .subway
+    background-image: url('http://f.fwallpapers.com/images/subway-station-hdr.jpg')
   .warehouse
     background-image: url('http://pre04.deviantart.net/fbf8/th/pre/i/2014/179/7/b/eh_abandoned_factory_by_owen_c-d7obojb.jpg')
   .sewer
     background-image: url('http://vignette1.wikia.nocookie.net/superfriends/images/2/2e/GothamSewer.jpg/revision/latest?cb=20110105193009')
   .joker
     background-image: url('http://pictures.costumemodels.com/1000/01/Heath%20Ledger%20As%20The%20Joker%20In%20Batman.jpg')
+  .fire
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS557L5nzhrgAjhOkXLsjP5ShYeOZ3YgVMNQk9sKmK0A8O_6tFIsw')
   .cityhall
     background-image: url('https://photos.travelblog.org/Photos/95206/366206/f/3364724-gotham-city-town-hall-0.jpg')
   .hospital
     background-image: url('http://vignette4.wikia.nocookie.net/batmantheanimatedseries/images/f/fb/Gotham_City_Hospital.png/revision/latest?cb=20121021081148')
+  .court
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/d/d0/Boone_County_Courthouse_in_Columbia,_Missouri.jpg')
   .police
     background-image: url('http://vignette3.wikia.nocookie.net/superfriends/images/c/cb/Headquarters.png/revision/latest?cb=20090408041758')
   .arkham
     background-image: url('https://s-media-cache-ak0.pinimg.com/236x/1d/34/ee/1d34ee4e02831cfe00fe7c10aae19c97.jpg')
+  .museum
+    background-image: url('http://vignette3.wikia.nocookie.net/superfriends/images/6/66/GothamMuseum.jpg/revision/latest?cb=20100820030259')
   .riddler
     background-image: url('http://static.giantbomb.com/uploads/scale_small/12/123089/1736071-434_riddler_15.jpg')
 .empty
@@ -145,17 +153,10 @@ select.menu
   display: flex
   flex-direction: column
   justify-content: flex-end
-  // border-left: 15px solid black
-  // border-right: 15px solid black
-  // border-bottom: 15px solid black
-  // border-top: 7px solid black
-  // outline: #ffff75 dashed
 p
   margin: 0
-footer
-  width: 100%
+.boardfooter
   background-color: #555450
-  margin-top: -5px
 .modal
   position: fixed
   top: 0

@@ -48,7 +48,7 @@ class App extends Component {
 
   incrementIncorrect = () => {
     const newScore = this.state.incorrectAnswers + 1
-    this.setState({ incorrectAnswers: newScore, lose: newScore >= 5 })
+    this.setState({ incorrectAnswers: newScore, lose: newScore >= 4 })
     if (newScore >= 5) {
       document.querySelector('.losemodal.hidden').className = 'losemodal'
     } else if (newScore) {

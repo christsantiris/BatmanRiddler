@@ -80,6 +80,26 @@ const cells = [
     clicked: false
   },
   {
+    className: 'museum',
+    location: 'Gotham City Museum',
+    clicked: false
+  },
+  {
+    className: 'court',
+    location: 'Gotham Superior Court',
+    clicked: false
+  },
+  {
+    className: 'fire',
+    location: 'Gotham Fire Dept',
+    clicked: false
+  },
+  {
+    className: 'subway',
+    location: 'Gotham Subway Station',
+    clicked: false
+  },
+  {
     className: 'crimescene',
     location: 'The Crime Scene',
     clicked: false
@@ -122,7 +142,7 @@ class Board extends Component {
         }
       })}
         </div>
-        <footer><Link to='/'><button className='backbutton'>Back</button></Link></footer>
+        <footer className='boardfooter'><Link to='/'><button className='backbutton'>Back</button></Link></footer>
       </div>
     )
   }
