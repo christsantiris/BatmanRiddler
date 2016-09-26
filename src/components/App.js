@@ -56,6 +56,10 @@ class App extends Component {
       browserHistory.push(`/game/${this.state.difficulty}`)
     }
   }
+  resetGame = () => {
+    this.setState({difficulty: 'easy', questions: null, incorrectAnswers: 0, correctAnswers: 0, lose: false})
+    console.log('string')
+  }
 
   render () {
     return <div className='startscreen'>
@@ -66,7 +70,7 @@ class App extends Component {
       </div>
       <div className='modal hidden' />
       <div className='losemodal hidden' />
-      {React.cloneElement(this.props.children, { setDifficulty: this.setDifficulty, startGame: this.startGame, questions: this.state.questions, difficulty: this.state.difficulty, incrementCorrect: this.incrementCorrect, incrementIncorrect: this.incrementIncorrect })}
+      {React.cloneElement(this.props.children, { setDifficulty: this.setDifficulty, startGame: this.startGame, questions: this.state.questions, difficulty: this.state.difficulty, incrementCorrect: this.incrementCorrect, incrementIncorrect: this.incrementIncorrect, resetGame: this.resetGame})}
     </div>
   }
 }

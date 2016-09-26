@@ -110,7 +110,8 @@ class Board extends Component {
   static propTypes = {
     startGame: React.PropTypes.func,
     questions: React.PropTypes.array,
-    params: React.PropTypes.object
+    params: React.PropTypes.object,
+    resetGame: React.PropTypes.func
   }
 
   componentDidMount () {
@@ -142,7 +143,7 @@ class Board extends Component {
         }
       })}
         </div>
-        <footer className='boardfooter'><Link to='/'><button className='backbutton'>Back</button></Link></footer>
+        <footer className='boardfooter'><Link to='/'><button className='backbutton' onClick={this.props.resetGame}>Reset</button></Link></footer>
       </div>
     )
   }
