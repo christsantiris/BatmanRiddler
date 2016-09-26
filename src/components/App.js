@@ -70,7 +70,7 @@ class App extends Component {
       </div>
       <div className='modal hidden' />
       <div className='losemodal hidden' />
-      {React.cloneElement(this.props.children, { setDifficulty: this.setDifficulty, startGame: this.startGame, questions: this.state.questions, difficulty: this.state.difficulty, incrementCorrect: this.incrementCorrect, incrementIncorrect: this.incrementIncorrect, resetGame: this.resetGame})}
+      {React.cloneElement(this.props.children, {setDifficulty: this.setDifficulty, startGame: this.startGame, questions: this.state.questions, difficulty: this.state.difficulty, incrementCorrect: this.incrementCorrect, incrementIncorrect: this.incrementIncorrect, resetGame: this.resetGame})}
     </div>
   }
 }
