@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { browserHistory } from 'react-router'
+import { shuffle } from '../utility'
 
 class App extends Component {
   static propTypes = {
@@ -25,7 +26,7 @@ class App extends Component {
     window.fetch(url, { method: 'GET', headers: { 'Authorization': 'Bearer Chris' } })
        .then((resp) => { return resp.json() })
        .then((data) => {
-         this.setState({ questions: data })
+         this.setState({ questions: shuffle(data) })
          if (!this.props.params.difficulty) {
            browserHistory.push(`/game/${difficulty}`)
          }
@@ -58,9 +59,11 @@ class App extends Component {
 
   render () {
     return <div className='startscreen'>
-      <h1>Batman vs The Riddler!</h1>
-      <div className='correct'>Correct Answers: {this.state.correctAnswers}</div>
-      <div className='incorrect'>Incorrect Answers: {this.state.incorrectAnswers}</div>
+      <div className='display'>
+        <div className='correct'>Correct Answers: {this.state.correctAnswers}</div>
+        <h1>Batman vs The Riddler!</h1>
+        <div className='incorrect'>Incorrect Answers: {this.state.incorrectAnswers}</div>
+      </div>
       <div className='modal hidden' />
       <div className='losemodal hidden' />
       {React.cloneElement(this.props.children, { setDifficulty: this.setDifficulty, startGame: this.startGame, questions: this.state.questions, difficulty: this.state.difficulty, incrementCorrect: this.incrementCorrect, incrementIncorrect: this.incrementIncorrect })}

@@ -1,8 +1,5 @@
 @import 'utility'
 
-$base-text-size: 16px
-$base-font-family: Helvetica
-
 html
   text-size-adjust: 100%
 
@@ -12,25 +9,51 @@ body
   height: 100%
 :root
   height: 100%
-nav
-  ul
-    li
-      list-style: none
-.correct
-  color: white
-  font-size: 2em
-.incorrect
-  color: white
-  font-size: 2em
+// nav
+//   ul
+//     li
+//       list-style: none
+//       font-family: fantasy
+.display
+  border: 2px solid black
+  .correct
+    color: white
+    font-size: 2em
+    font-family: fantasy
+    border: 2px solid white
+    height: 20%
+  .incorrect
+    color: white
+    font-size: 2em
+    font-family: fantasy
+    border: 2px solid white
+    height: 20%
 .startscreen
   text-align: center
   height: 100%
   background-color: #555450
+.display
+  background-image: url('http://twitrheaders.com/wp-content/uploads/2014/05/Batman.jpg')
+  background-size: contain
+  display: flex
+  justify-content: space-between
+  h1
+    font-size: 2.5em
+    font-family: fantasy
+    padding-top: 1em
+    margin-bottom: 0
+    color: white
 .startgame
   color: white
   height: 100%
   background-image: url('../images/the_riddler.jpg')
+  background-size: cover
+  background-position: fixed
+  left: 0
+  right: 0
   height: 100vh
+  font-family: fantasy
+  padding-top: 1.5em
   p
     font-size: 2em
 .startbutton
@@ -43,6 +66,7 @@ nav
   color: white
   border-radius: 10px
   font-size: 1.5em
+  font-family: fantasy
 select.menu
   width: 10em
   border-radius: 10px
@@ -69,18 +93,35 @@ select.menu
 .gamescreen
   display: flex
   flex-direction: column
-  align-items: center
-  align-content: center
+  align-items: left
+  align-content: left
   background-image: url('../images/the_riddler.jpg')
   height: 100vh
   width: 100vw
   background-position: center
   background-size: cover
   background-repeat: no-repeat
+  h2
+    color: #6FBD47
+    font-family: fantasy
+    font-weight: bolder
+    font-size: 2em
+    margin-bottom: 0
   p
     color: white
     font-family: fantasy
-    font-size: 20px
+    font-size: 4em
+    font-weight: bolder
+  .choice
+    height: 4em
+    width: 9em
+    border-radius: 10px
+    margin: .5em
+    background-color: #85F15F
+    font-size: 1.5em
+    margin-left: 25%
+    font-family: fantasy
+    border: 5px solid #1F2A26
 .gotham
   background-image: url('http://sdeerwallpaper.com/Cool-Wallpapers/batman-wallpaper-background-Is-Cool-Wallpapers.jpg?7b7757')
   background-repeat: no-repeat
@@ -91,7 +132,6 @@ select.menu
   height: 100vh
   display: flex
   flex-wrap: wrap
-  padding-bottom: 5px
   a
     width: 25%
     height: 20%
