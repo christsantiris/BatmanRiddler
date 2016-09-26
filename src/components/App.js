@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { browserHistory } from 'react-router'
 import { shuffle } from '../utility'
+import { connect } from 'react-redux'
+import * as actionCreators from '../actions'
 
 class App extends Component {
   static propTypes = {
@@ -19,7 +21,18 @@ class App extends Component {
       lose: false
     }
   }
-
+  // function mapStateToProps (state) {
+  //   return {
+  //     correctAnswers: state.correctAnswers,
+  //     incorrectAnswers: incorrectAnswers,
+  //     difficulty: state.difficulty,
+  //     win: false
+  //   }
+  // }
+  //
+  // function mapDispatchToProps (dispatch) {
+  //   return bindActionCreators(actionCreators, dispatch)
+  // }
   startGame = () => {
     let difficulty = this.state.difficulty
     let url = `https://beoderp.herokuapp.com/${difficulty}questions`
@@ -74,5 +87,6 @@ class App extends Component {
     </div>
   }
 }
+// const App = connect(mapStateToProps, mapDispatchToProps)(Board, Game)
 
 export default App

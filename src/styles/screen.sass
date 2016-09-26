@@ -9,36 +9,75 @@ body
   height: 100%
 :root
   height: 100%
-.display
-  border: 2px solid black
-  .correct
-    color: white
-    font-size: 2em
-    font-family: fantasy
-    border: 2px solid white
-    border-radius: 10px
-    height: 20%
-  .incorrect
-    color: white
-    font-size: 2em
-    font-family: fantasy
-    border: 2px solid white
-    border-radius: 10px
-    height: 20%
 .startscreen
   text-align: center
   height: 100%
   background-color: #555450
-.display
-  background-image: url('../images/batmanheader.jpg')
-  background-size: contain
-  display: flex
-  justify-content: space-between
-  h1
-    font-size: 3.5em
-    font-family: fantasy
-    margin-bottom: 0
+  .display
+    border: 2px solid black
+    background-image: url('../images/batmanheader.jpg')
+    background-size: contain
+    display: flex
+    justify-content: space-between
     color: white
+    h1
+      font-size: 3.5em
+      font-family: fantasy
+      margin-bottom: 0
+    .correct
+      color: white
+      font-size: 2em
+      font-family: fantasy
+      border: 2px solid white
+      border-radius: 10px
+      height: 20%
+    .incorrect
+      color: white
+      font-size: 2em
+      font-family: fantasy
+      border: 2px solid white
+      border-radius: 10px
+      height: 20%
+.modal
+  position: fixed
+  top: 0
+  right: 0
+  left: 0
+  bottom: 0
+  display: flex
+  flex-direction: column
+  text-align: center
+  align-items: center
+  background-repeat: no-repeat
+  background-size: contain
+  background-position: center
+  min-height: 100%
+  min-height: 100vh
+  background-color: #000000
+  background-image: url('http://static.comicvine.com/uploads/original/11114/111142536/3976523-2610572-question_1537851.jpg')
+  transform: translateY(0%)
+  transition: transform 0.25s linear
+  &.hidden
+    display: none
+.losemodal
+  position: fixed
+  top: 0
+  right: 0
+  left: 0
+  bottom: 0
+  display: flex
+  flex-direction: column
+  text-align: center
+  align-items: center
+  background-repeat: no-repeat
+  background-size: contain
+  background-position: center
+  background-color: #120302
+  background-image: url('http://sd.keepcalm-o-matic.co.uk/i/keep-calm-you-lose-i-win-5.png')
+  transform: translateY(0%)
+  transition: transform 0.25s linear
+  &.hidden
+    display: none
 .startgame
   display: flex
   color: white
@@ -54,6 +93,15 @@ body
   padding-top: 1.5em
   p
     font-size: 2em
+  .batman
+    background-image: url('http://www.clipartkid.com/images/796/batman2-fOJb4F-clipart.png')
+    background-repeat: no-repeat
+    background-size: contain
+    background-position: center
+    height: 60%
+    align-items: center
+    align-content: center
+    color: transparent
 .startbutton
   background-image: url('http://i792.photobucket.com/albums/yy206/rockysimpson/batman_symbol.png')
   background-size: contain
@@ -76,6 +124,12 @@ select.menu
   font-family: fantasy
   background-color: #555450
   color: white
+.gotham
+  background-image: url('http://sdeerwallpaper.com/Cool-Wallpapers/batman-wallpaper-background-Is-Cool-Wallpapers.jpg?7b7757')
+  background-repeat: no-repeat
+  background-size: cover
+  background-position: center
+  background-attachment: scroll
 .backbutton
   background-image: url('http://www.getbatman.com/wp-content/uploads/2014/06/Batman-window-decal.jpg')
   background-size: cover
@@ -84,56 +138,6 @@ select.menu
   height: 6em
   width: 9em
   border-radius: 10px
-.batman
-  background-image: url('http://www.clipartkid.com/images/796/batman2-fOJb4F-clipart.png')
-  background-repeat: no-repeat
-  background-size: contain
-  background-position: center
-  height: 60%
-  align-items: center
-  align-content: center
-  color: transparent
-.gamescreen
-  display: flex
-  flex-direction: column
-  align-items: left
-  align-content: left
-  background-image: url('../images/the_riddler.jpg')
-  height: 100vh
-  width: 100vw
-  background-position: center
-  background-size: cover
-  background-repeat: no-repeat
-  background-attachment: scroll
-  h2
-    color: #6FBD47
-    font-family: fantasy
-    font-weight: bolder
-    font-size: 2em
-    margin-bottom: 0
-    margin-right: 50%
-  p
-    color: white
-    font-family: fantasy
-    font-size: 2em
-    font-weight: bolder
-    margin-right: 50%
-  .choice
-    min-height: 2em
-    width: 9em
-    border-radius: 10px
-    margin: .5em
-    background-color: #85F15F
-    font-size: 1.5em
-    margin-left: 30%
-    font-family: fantasy
-    border: 5px solid #1F2A26
-.gotham
-  background-image: url('http://sdeerwallpaper.com/Cool-Wallpapers/batman-wallpaper-background-Is-Cool-Wallpapers.jpg?7b7757')
-  background-repeat: no-repeat
-  background-size: cover
-  background-position: center
-  background-attachment: scroll
 .board
   width: 50%
   height: 100vh
@@ -204,43 +208,38 @@ p
   margin: 0
 .boardfooter
   background-color: #555450
-.modal
-  position: fixed
-  top: 0
-  right: 0
-  left: 0
-  bottom: 0
+.gamescreen
   display: flex
   flex-direction: column
-  text-align: center
-  align-items: center
-  background-repeat: no-repeat
-  background-size: contain
+  align-items: left
+  align-content: left
+  background-image: url('../images/the_riddler.jpg')
+  height: 100vh
+  width: 100vw
   background-position: center
-  min-height: 100%
-  min-height: 100vh
-  background-color: #000000
-  background-image: url('http://static.comicvine.com/uploads/original/11114/111142536/3976523-2610572-question_1537851.jpg')
-  transform: translateY(0%)
-  transition: transform 0.25s linear
-  &.hidden
-    display: none
-.losemodal
-  position: fixed
-  top: 0
-  right: 0
-  left: 0
-  bottom: 0
-  display: flex
-  flex-direction: column
-  text-align: center
-  align-items: center
+  background-size: cover
   background-repeat: no-repeat
-  background-size: contain
-  background-position: center
-  background-color: #120302
-  background-image: url('http://sd.keepcalm-o-matic.co.uk/i/keep-calm-you-lose-i-win-5.png')
-  transform: translateY(0%)
-  transition: transform 0.25s linear
-  &.hidden
-    display: none
+  background-attachment: scroll
+  h2
+    color: #6FBD47
+    font-family: fantasy
+    font-weight: bolder
+    font-size: 2em
+    margin-bottom: 0
+    margin-right: 50%
+  p
+    color: white
+    font-family: fantasy
+    font-size: 2em
+    font-weight: bolder
+    margin-right: 50%
+  .choice
+    min-height: 2em
+    width: 9em
+    border-radius: 10px
+    margin: .5em
+    background-color: #85F15F
+    font-size: 1.5em
+    margin-left: 30%
+    font-family: fantasy
+    border: 5px solid #1F2A26
