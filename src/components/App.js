@@ -61,7 +61,7 @@ class App extends Component {
     return <div className='startscreen'>
       <div className='display'>
         <div className='correct'>Correct Answers: {this.state.correctAnswers}</div>
-        <h1>Batman vs The Riddler!</h1>
+        <h1>Batman vs The Riddler</h1>
         <div className='incorrect'>Incorrect Answers: {this.state.incorrectAnswers}</div>
       </div>
       <div className='modal hidden' />

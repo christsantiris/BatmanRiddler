@@ -9,7 +9,8 @@ class Start extends Component {
 
   render () {
     return <div className='startgame'>
-      <p>Can you help Batman solve the Riddler's riddles?</p>
+      <p>The Riddler has left clues behind in different locations around Gotham City.</p>
+      <p>Can you help Batman capture The Riddler by solving his riddles?</p>
       <select className='menu' onChange={this.props.setDifficulty}>
         <option value='easy'>Easy</option>
         <option value='medium'>Medium</option>
