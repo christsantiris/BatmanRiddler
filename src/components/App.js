@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { browserHistory } from 'react-router'
 import { shuffle } from '../utility'
-import { connect } from 'react-redux'
-import * as actionCreators from '../actions'
+import cx from 'classnames'
 
 class App extends Component {
   static propTypes = {
@@ -54,9 +53,9 @@ class App extends Component {
     const newScore = this.state.correctAnswers + 1
     this.setState({ correctAnswers: newScore, win: newScore >= 5 })
     if (newScore >= 5) {
-      document.querySelector('.modal.hidden').className = 'modal'
+      this.setState({ win: true })
     } else if (newScore) {
-      browserHistory.push(`/game/${this.state.difficulty}`)
+      browserHistory.push(`/game/${this.state.difficulty}?a=c`)
     }
   }
 
@@ -64,11 +63,12 @@ class App extends Component {
     const newScore = this.state.incorrectAnswers + 1
     this.setState({ incorrectAnswers: newScore, lose: newScore >= 4 })
     if (newScore >= 5) {
-      document.querySelector('.losemodal.hidden').className = 'losemodal'
+      this.setState({ lose: true })
     } else if (newScore) {
-      browserHistory.push(`/game/${this.state.difficulty}`)
+      browserHistory.push(`/game/${this.state.difficulty}?a=i`)
     }
   }
+
   resetGame = () => {
     this.setState({difficulty: 'easy', questions: null, incorrectAnswers: 0, correctAnswers: 0, lose: false})
     console.log('string')
@@ -81,8 +81,8 @@ class App extends Component {
         <h1>Batman vs The Riddler</h1>
         <div className='incorrect'>Incorrect Answers: {this.state.incorrectAnswers}</div>
       </div>
-      <div className='modal hidden' />
-      <div className='losemodal hidden' />
+      <div className={cx('modal', { 'hidden': !this.state.win })} />
+      <div className={cx('losemodal', { 'hidden': !this.state.lose })} />
       {React.cloneElement(this.props.children, {setDifficulty: this.setDifficulty, startGame: this.startGame, questions: this.state.questions, difficulty: this.state.difficulty, incrementCorrect: this.incrementCorrect, incrementIncorrect: this.incrementIncorrect, resetGame: this.resetGame})}
     </div>
   }

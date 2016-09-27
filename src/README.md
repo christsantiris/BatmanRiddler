@@ -5,3 +5,4 @@
 - If Batman can't solve the riddle, he travels left
 - reset button on modal
 - convert to mobx
+- convert to mobile/tablet

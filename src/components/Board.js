@@ -45,8 +45,8 @@ const cells = [
 
   },
   {
-    className: 'joker',
-    location: 'The Joker\'s Hideout',
+    className: 'jail',
+    location: 'Gotham City Jail',
     clicked: false
   },
   {
@@ -111,6 +111,7 @@ class Board extends Component {
     startGame: React.PropTypes.func,
     questions: React.PropTypes.array,
     params: React.PropTypes.object,
+    location: React.PropTypes.object,
     resetGame: React.PropTypes.func
   }
 
@@ -119,14 +120,26 @@ class Board extends Component {
       this.props.startGame()
     }
   }
+
   disableDiv = (index) => {
     cells[index].clicked = true
     browserHistory.push(`/game/${this.props.params.difficulty}/${index}`)
   }
+
   enableDiv = (index, cells) => {
     cells[index].clicked = false
     browserHistory.push(`/game/${this.props.params.difficulty}/${index}`)
   }
+
+  get notice () {
+    switch (this.props.location.query.a) {
+      case 'i':
+        return <div className='notice incorrect' >Your answer was incorrect!</div>
+      case 'c':
+        return <div className='notice correct' >Your answer was correct!</div>
+    }
+  }
+
   render () {
     return (
       <div className='gotham'>
@@ -144,6 +157,7 @@ class Board extends Component {
       })}
         </div>
         <footer className='boardfooter'><Link to='/'><button className='backbutton' onClick={this.props.resetGame}>Reset</button></Link></footer>
+        {this.notice}
       </div>
     )
   }
