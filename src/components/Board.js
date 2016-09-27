@@ -60,8 +60,8 @@ const cells = [
     clicked: false
   },
   {
-    className: 'cityhall',
-    location: 'Gotham City Hall',
+    className: 'joker',
+    location: 'The Joker\'s Hideout',
     clicked: false
   },
   {
@@ -80,28 +80,28 @@ const cells = [
     clicked: false
   },
   {
-    className: 'museum',
-    location: 'Gotham City Museum',
+    className: 'club',
+    location: 'Gotham Explorer\'s Club',
     clicked: false
   },
   {
-    className: 'court',
-    location: 'Gotham Superior Court',
+    className: 'dinner',
+    location: 'Gotham Bay Dinner',
     clicked: false
   },
   {
-    className: 'fire',
-    location: 'Gotham Fire Dept',
+    className: 'alley',
+    location: 'Crime Alley',
     clicked: false
   },
   {
-    className: 'subway',
-    location: 'Gotham Subway Station',
+    className: 'traintracks',
+    location: 'Gotham Railroad Tracks',
     clicked: false
   },
   {
-    className: 'crimescene',
-    location: 'The Crime Scene',
+    className: 'hippodrome',
+    location: 'Gotham Hippodrome',
     clicked: false
   }
 ]
