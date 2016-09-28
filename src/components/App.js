@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
-import { browserHistory } from 'react-router'
+import { browserHistory, Link } from 'react-router'
 import { shuffle } from '../utility'
 import cx from 'classnames'
 
 class App extends Component {
   static propTypes = {
     children: React.PropTypes.object.isRequired,
-    params: React.PropTypes.object
+    params: React.PropTypes.object,
+    resetGame: React.PropTypes.func
   }
 
   constructor (props) {
@@ -20,18 +21,7 @@ class App extends Component {
       lose: false
     }
   }
-  // function mapStateToProps (state) {
-  //   return {
-  //     correctAnswers: state.correctAnswers,
-  //     incorrectAnswers: incorrectAnswers,
-  //     difficulty: state.difficulty,
-  //     win: false
-  //   }
-  // }
-  //
-  // function mapDispatchToProps (dispatch) {
-  //   return bindActionCreators(actionCreators, dispatch)
-  // }
+
   startGame = () => {
     let difficulty = this.state.difficulty
     let url = `https://beoderp.herokuapp.com/${difficulty}questions`
@@ -71,7 +61,6 @@ class App extends Component {
 
   resetGame = () => {
     this.setState({difficulty: 'easy', questions: null, incorrectAnswers: 0, correctAnswers: 0, lose: false})
-    console.log('string')
   }
 
   render () {
@@ -81,12 +70,13 @@ class App extends Component {
         <h1>Batman vs The Riddler</h1>
         <div className='incorrect'>Incorrect Answers: {this.state.incorrectAnswers}</div>
       </div>
-      <div className={cx('modal', { 'hidden': !this.state.win })} />
-      <div className={cx('losemodal', { 'hidden': !this.state.lose })} />
+      {/* <div className={cx('modal', { 'hidden': !this.state.win })} />
+      <div className={cx('losemodal', { 'hidden': !this.state.lose })} /> */}
+      <div className={cx('modal', { 'hidden': !this.state.win })}><Link to='/'><button className='backbutton' onClick={this.resetGame}>Reset</button></Link></div>
+      <div className={cx('losemodal', { 'hidden': !this.state.lose })}><Link to='/'><button className='backbutton' onClick={this.resetGame}>Reset</button></Link></div>
       {React.cloneElement(this.props.children, {setDifficulty: this.setDifficulty, startGame: this.startGame, questions: this.state.questions, difficulty: this.state.difficulty, incrementCorrect: this.incrementCorrect, incrementIncorrect: this.incrementIncorrect, resetGame: this.resetGame})}
     </div>
   }
 }
-// const App = connect(mapStateToProps, mapDispatchToProps)(Board, Game)
 
 export default App
