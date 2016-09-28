@@ -77,10 +77,10 @@ class App extends Component {
         <h1>Batman vs The Riddler</h1>
         <div className='incorrect'>Incorrect Answers: {this.state.incorrectAnswers}</div>
       </div>
-      <div className={cx('modal', { 'hidden': !this.state.win })} />
-      <div className={cx('losemodal', { 'hidden': !this.state.lose })} />
-      {/* <div className={cx('modal', { 'hidden': !this.state.win })}><Link to='/'><button className='backbutton' onClick={this.resetGame}>Reset</button></Link></div>
-      <div className={cx('losemodal', { 'hidden': !this.state.lose })}><Link to='/'><button className='backbutton' onClick={this.resetGame}>Reset</button></Link></div> */}
+      {/* <div className={cx('modal', { 'hidden': !this.state.win })} />
+      <div className={cx('losemodal', { 'hidden': !this.state.lose })} /> */}
+      <div className={cx('modal', { 'hidden': !this.state.win })}><Link to='/'><button className='backbutton' onClick={this.resetGame}>Reset</button></Link></div>
+      <div className={cx('losemodal', { 'hidden': !this.state.lose })}><Link to='/'><button className='backbutton' onClick={this.resetGame}>Reset</button></Link></div>
       {React.cloneElement(this.props.children, {setDifficulty: this.setDifficulty, startGame: this.startGame, questions: this.state.questions, difficulty: this.state.difficulty, incrementCorrect: this.incrementCorrect, incrementIncorrect: this.incrementIncorrect, resetGame: this.resetGame, clickedCells: this.state.clickedCells, changeCell: this.changeCell})}
     </div>
   }
