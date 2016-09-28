@@ -6,46 +6,53 @@ html
 body
   @include font-smoothing(on)
   margin: 0
-  height: 100%
+  height: 100vh
 :root
-  height: 100%
+  height: 100vh
 .startscreen
   text-align: center
-  height: 100%
+  height: 100vh
   .display
     border: 2px solid black
     background-image: url('../images/batmanheader.jpg')
-    background-size: contain
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
     display: flex
     justify-content: space-between
     color: white
     display: flex
     flex-wrap: wrap
     h1
-      font-size: 3.5em
+      font-size: 5vh
+      // font-size: 3.5em
       font-family: fantasy
       margin-bottom: 0
       width: 40%
     .correct
       color: white
-      font-size: 1.5em
+      // font-size: 1.5em
+      font-size: 3vh
       font-family: fantasy
       border: 2px solid white
       border-radius: 10px
       height: 20%
       width: 20%
-      margin: 1em
+      // margin: 1em
+      margin: 2vw
       padding: .5em
       background-color: #555450
     .incorrect
       color: white
-      font-size: 1.5em
+      // font-size: 1.5em
+      font-size: 3vh
       font-family: fantasy
       border: 2px solid white
       border-radius: 10px
       height: 20%
       width: 20%
-      margin: 1em
+      // margin: 1em
+      margin: 2vw
       padding: .5em
       background-color: #555450
 .modal
@@ -92,22 +99,24 @@ body
   display: flex
   flex-wrap: wrap
   color: white
-  height: 100%
+  height: 100vh
   background-image: url('../images/the_riddler.jpg')
   background-size: cover
   background-position: fixed
-  background-attachment: fixed
+  // background-attachment: fixed
   left: 0
   right: 0
+  bottom: 0
   height: 100vh
   font-family: fantasy
   padding-top: 1.5em
   p
-    font-size: 1.5em
+    // font-size: 1.5em
+    font-size: 3vh
     font-weight: bolder
     margin-left: 5%
-  .left
-    margin-right: 50%
+  // .left
+  //   margin-right: 50vw
   .batman
     background-image: url('http://www.clipartkid.com/images/796/batman2-fOJb4F-clipart.png')
     background-repeat: no-repeat
@@ -119,29 +128,36 @@ body
     color: transparent
 .startbutton
   background-image: url('http://i792.photobucket.com/albums/yy206/rockysimpson/batman_symbol.png')
-  background-size: contain
+  background-size: cover
   background-repeat: no-repeat
   background-position: center
   background-color: black
-  height: 4em
-  width: 6em
+  // height: 4em
+  height: 13.5vh
+  // width: 6em
+  width: 14vh
   color: white
   border-radius: 10px
   border: 5px solid white
-  font-size: 1.5em
+  // font-size: 1.5em
+  font-size: 3vh
   font-family: fantasy
+  margin: .5vh
 select.menu
-  height: 4em
-  width: 6em
+  // height: 4em
+  height: 13.5vh
+  // width: 6em
+  width: 14vh
   border-radius: 10px
   border: 5px solid white
-  font-size: 1.5em
+  // font-size: 1.5em
+  font-size: 3vh
   font-family: fantasy
   background-color: #555450
   color: white
+  margin: .5vh
 .gotham
   background-image: url('http://sdeerwallpaper.com/Cool-Wallpapers/batman-wallpaper-background-Is-Cool-Wallpapers.jpg?7b7757')
-  // background-image: url('http://gilbertsollars.com/images/wallpapers/batman-background-images/batman-background-images-18.jpg')
   background-repeat: no-repeat
   background-size: cover
   background-attachment: scroll
