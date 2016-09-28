@@ -14,12 +14,19 @@ class App extends Component {
     super(props)
     this.state = {
       questions: [],
+      clickedCells: [],
       difficulty: props.params.difficulty || 'easy',
       correctAnswers: 0,
       incorrectAnswers: 0,
       win: false,
       lose: false
     }
+  }
+
+  changeCell = (index, status) => {
+    let newCells = this.state.clickedCells.slice(0)
+    newCells[index] = status
+    this.setState({clickedCells: newCells})
   }
 
   startGame = () => {
@@ -60,7 +67,7 @@ class App extends Component {
   }
 
   resetGame = () => {
-    this.setState({difficulty: 'easy', questions: null, incorrectAnswers: 0, correctAnswers: 0, lose: false})
+    this.setState({difficulty: 'easy', questions: null, incorrectAnswers: 0, correctAnswers: 0, lose: false, clickedCells: []})
   }
 
   render () {
@@ -70,11 +77,11 @@ class App extends Component {
         <h1>Batman vs The Riddler</h1>
         <div className='incorrect'>Incorrect Answers: {this.state.incorrectAnswers}</div>
       </div>
-      {/* <div className={cx('modal', { 'hidden': !this.state.win })} />
-      <div className={cx('losemodal', { 'hidden': !this.state.lose })} /> */}
-      <div className={cx('modal', { 'hidden': !this.state.win })}><Link to='/'><button className='backbutton' onClick={this.resetGame}>Reset</button></Link></div>
-      <div className={cx('losemodal', { 'hidden': !this.state.lose })}><Link to='/'><button className='backbutton' onClick={this.resetGame}>Reset</button></Link></div>
-      {React.cloneElement(this.props.children, {setDifficulty: this.setDifficulty, startGame: this.startGame, questions: this.state.questions, difficulty: this.state.difficulty, incrementCorrect: this.incrementCorrect, incrementIncorrect: this.incrementIncorrect, resetGame: this.resetGame})}
+      <div className={cx('modal', { 'hidden': !this.state.win })} />
+      <div className={cx('losemodal', { 'hidden': !this.state.lose })} />
+      {/* <div className={cx('modal', { 'hidden': !this.state.win })}><Link to='/'><button className='backbutton' onClick={this.resetGame}>Reset</button></Link></div>
+      <div className={cx('losemodal', { 'hidden': !this.state.lose })}><Link to='/'><button className='backbutton' onClick={this.resetGame}>Reset</button></Link></div> */}
+      {React.cloneElement(this.props.children, {setDifficulty: this.setDifficulty, startGame: this.startGame, questions: this.state.questions, difficulty: this.state.difficulty, incrementCorrect: this.incrementCorrect, incrementIncorrect: this.incrementIncorrect, resetGame: this.resetGame, clickedCells: this.state.clickedCells, changeCell: this.changeCell})}
     </div>
   }
 }

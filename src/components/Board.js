@@ -5,104 +5,83 @@ import cx from 'classnames'
 const cells = [
   {
     className: 'riddler',
-    location: 'The Riddler\'s Hideout',
-    clicked: false
+    location: 'The Riddler\'s Hideout'
   },
   {
     className: 'port',
-    location: 'Gotham City Port',
-    clicked: false
+    location: 'Gotham City Port'
   },
   {
     className: 'arkham',
-    location: 'Arkham Asylum',
-    clicked: false
+    location: 'Arkham Asylum'
   },
   {
     className: 'bank',
-    location: 'Gotham City Bank',
-    clicked: false
+    location: 'Gotham City Bank'
   },
   {
     className: 'falcone',
-    location: 'Don Falcone\'s Restaurant',
-    clicked: false
+    location: 'Don Falcone\'s Restaurant'
   },
   {
     className: 'wayne',
-    location: 'Wayne Enterprises',
-    clicked: false
+    location: 'Wayne Enterprises'
   },
   {
     className: 'park',
-    location: 'Gotham Amusement Park',
-    clicked: false
+    location: 'Gotham Amusement Park'
   },
   {
     className: 'powerplant',
-    location: 'Gotham Power Plant',
-    clicked: false
-
+    location: 'Gotham Power Plant'
   },
   {
     className: 'jail',
-    location: 'Gotham City Jail',
-    clicked: false
+    location: 'Gotham City Jail'
   },
   {
     className: 'sewer',
-    location: 'Gotham City Sewer',
-    clicked: false
+    location: 'Gotham City Sewer'
   },
   {
     className: 'warehouse',
-    location: 'An Abandoned Warehouse',
-    clicked: false
+    location: 'An Abandoned Warehouse'
   },
   {
     className: 'joker',
-    location: 'The Joker\'s Hideout',
-    clicked: false
+    location: 'The Joker\'s Hideout'
   },
   {
     className: 'penguin',
-    location: 'The Penguin\'s Hideout',
-    clicked: false
+    location: 'The Penguin\'s Hideout'
   },
   {
     className: 'police',
-    location: 'GCPD',
-    clicked: false
+    location: 'GCPD'
   },
   {
     className: 'hospital',
-    location: 'Gotham Hospital',
-    clicked: false
+    location: 'Gotham Hospital'
   },
   {
     className: 'club',
-    location: 'Gotham Explorer\'s Club',
-    clicked: false
+    location: 'Gotham Explorer\'s Club'
   },
   {
     className: 'dinner',
-    location: 'Gotham Bay Dinner',
-    clicked: false
+    location: 'Gotham Bay Dinner'
   },
   {
     className: 'alley',
-    location: 'Crime Alley',
-    clicked: false
+    location: 'Crime Alley'
   },
   {
     className: 'traintracks',
-    location: 'Gotham Railroad Tracks',
-    clicked: false
+    location: 'Gotham Railroad Tracks'
   },
   {
     className: 'hippodrome',
-    location: 'Gotham Hippodrome',
-    clicked: false
+    location: 'Gotham Hippodrome'
   }
 ]
 class Board extends Component {
@@ -122,12 +101,12 @@ class Board extends Component {
   }
 
   disableDiv = (index) => {
-    cells[index].clicked = true
+    this.props.changeCell(index, true)
     browserHistory.push(`/game/${this.props.params.difficulty}/${index}`)
   }
 
-  enableDiv = (index, cells) => {
-    cells[index].clicked = false
+  enableDiv = (index) => {
+    this.props.changeCell(index, false)
     browserHistory.push(`/game/${this.props.params.difficulty}/${index}`)
   }
 
@@ -145,7 +124,7 @@ class Board extends Component {
       <div className='gotham'>
         <div className='board'>
       {cells.map((cell, index) => {
-        if (cell.clicked) {
+        if (this.props.clickedCells[index]) {
           return <Link key={index} onClick={(e) => e.preventDefault()}>
             <div className='empty'><p>{cell.location}</p></div>
           </Link>
