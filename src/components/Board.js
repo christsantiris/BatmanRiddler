@@ -91,7 +91,9 @@ class Board extends Component {
     questions: React.PropTypes.array,
     params: React.PropTypes.object,
     location: React.PropTypes.object,
-    resetGame: React.PropTypes.func
+    resetGame: React.PropTypes.func,
+    clickedCells: React.PropTypes.func,
+    changeCell: React.PropTypes.func
   }
 
   componentDidMount () {
