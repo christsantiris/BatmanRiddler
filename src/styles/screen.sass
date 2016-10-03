@@ -36,7 +36,7 @@ body
       font-family: fantasy
       border: 2px solid white
       border-radius: 10px
-      height: 20%
+      height: 15%
       width: 20%
       // margin: 1em
       margin: 2vw
@@ -49,7 +49,7 @@ body
       font-family: fantasy
       border: 2px solid white
       border-radius: 10px
-      height: 20%
+      height: 15%
       width: 20%
       // margin: 1em
       margin: 2vw
@@ -99,22 +99,25 @@ body
   display: flex
   flex-wrap: wrap
   color: white
-  height: 100vh
+  // height: 80vh
   background-image: url('../images/the_riddler.jpg')
   background-size: cover
-  background-position: fixed
+  // background-position: fixed
   // background-attachment: fixed
-  left: 0
-  right: 0
-  bottom: 0
+  // left: 0
+  // right: 0
+  // bottom: 0
+  top: 0
   height: 100vh
   font-family: fantasy
   padding-top: 1.5em
+  overflow: hidden
   p
     // font-size: 1.5em
     font-size: 3vh
     font-weight: bolder
     margin-left: 5%
+    font-family: helvetica
   // .left
   //   margin-right: 50vw
   .batman
@@ -122,7 +125,7 @@ body
     background-repeat: no-repeat
     background-size: contain
     background-position: center
-    height: 30%
+    height: 40%
     align-items: center
     align-content: center
     color: transparent
@@ -131,39 +134,29 @@ body
   background-size: cover
   background-repeat: no-repeat
   background-position: center
-  background-color: black
-  // height: 4em
-  height: 13.5vh
-  // width: 6em
-  width: 14vh
-  color: white
+  height: 6em
+  width: 9em
   border-radius: 10px
-  border: 5px solid white
-  // font-size: 1.5em
-  font-size: 3vh
-  font-family: fantasy
-  margin: .5vh
+  color: white
+  margin: .5em
+  font-size: 3vw
 select.menu
-  // height: 4em
-  height: 13.5vh
-  // width: 6em
-  width: 14vh
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center
+  height: 6em
+  width: 9em
   border-radius: 10px
-  border: 5px solid white
-  // font-size: 1.5em
-  font-size: 3vh
-  font-family: fantasy
-  background-color: #555450
   color: white
-  margin: .5vh
+  background-color: #555450
+  font-size: 3vw
 .gotham
   background-image: url('http://sdeerwallpaper.com/Cool-Wallpapers/batman-wallpaper-background-Is-Cool-Wallpapers.jpg?7b7757')
   background-repeat: no-repeat
   background-size: cover
   bottom: 0
   height: 100vh
-  height: 100%
-  // background-attachment: fixed
+  // height: 100%
 .backbutton
   background-image: url('http://www.getbatman.com/wp-content/uploads/2014/06/Batman-window-decal.jpg')
   background-size: cover
@@ -172,13 +165,22 @@ select.menu
   height: 6em
   width: 9em
   border-radius: 10px
+.aboutbutton
+  background-image: url('http://www.getbatman.com/wp-content/uploads/2014/06/Batman-window-decal.jpg')
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center
+  height: 6em
+  width: 9em
+  border-radius: 10px
+  font-size: 3vw
 .board
   height: 100vh
   display: flex
   flex-wrap: wrap
   // margin-left: 25vw
   // margin-right: 25vw
-  margin-right: 50%
+  // margin-right: 50%
   a
     width: 25%
     height: 20%
@@ -244,6 +246,7 @@ select.menu
   display: flex
   flex-direction: column
   justify-content: flex-end
+  border: 1px solid white
 p
   margin: 0
 .boardfooter
@@ -270,9 +273,9 @@ p
     margin-right: 50%
   p
     color: white
-    font-family: fantasy
+    font-family: helvetica
     // font-size: 2em
-    font-size: 3.5vh
+    font-size: 2.5vh
     font-weight: bolder
     margin-right: 50%
   .choice
@@ -320,3 +323,18 @@ p
     opacity: 1.0
   100%
     opacity: 0.0
+.about
+  background-image: url('../images/enigma.jpg')
+  background-size: contain
+  background-repeat: no-repeat
+  font-size: 2em
+  height: 100vh
+  h1
+    margin-left: 35vw
+    text-align: left
+    margin-bottom: 0
+    margin-top: 0
+    background-color: rgba(85, 84, 80, .3)
+  .description
+    background-color: rgba(85, 84, 80, .3)
+    margin-left: 35vw
