@@ -127,12 +127,12 @@ class Board extends Component {
         <div className='board'>
           {cells.map((cell, index) => {
             if (this.props.clickedCells[index]) {
-              return <Link key={index} onClick={(e) => e.preventDefault()}>
-                <div className='empty'><p>{cell.location}</p></div>
+              return <Link key={index} onClick={(e) => e.preventDefault()} className='empty'>
+                <p>{cell.location}</p>
               </Link>
             } else {
-              return <Link key={index} onClick={() => this.disableDiv(index)}>
-                <div className={cx(cell.className, 'cell')}><p>{cell.location}</p></div>
+              return <Link key={index} onClick={() => this.disableDiv(index)} className={cx(cell.className, 'cell')}>
+                <p>{cell.location}</p>
               </Link>
             }
           })}

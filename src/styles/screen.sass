@@ -7,11 +7,18 @@ body
   @include font-smoothing(on)
   margin: 0
   height: 100vh
-:root
+#root
   height: 100vh
 .startscreen
   text-align: center
   height: 100vh
+  display: flex
+  flex-direction: column
+
+  main
+    flex: 1
+    display: flex
+
   .display
     border: 2px solid black
     background-image: url('../images/batmanheader.jpg')
@@ -22,17 +29,18 @@ body
     justify-content: space-between
     color: white
     display: flex
+    min-height: 100px
     // flex-wrap: wrap
     h1
-      font-size: 5vh
-      // font-size: 3.5em
+      // font-size: 5vh
+      font-size: 2em
       font-family: fantasy
       margin-bottom: 0
       width: 40vw
     .correct
       color: white
-      // font-size: 1.5em
-      font-size: 3vh
+      font-size: 1.2em
+      // font-size: 3vh
       font-family: fantasy
       border: 2px solid white
       border-radius: 10px
@@ -45,8 +53,8 @@ body
       // background-color: #555450
     .incorrect
       color: white
-      // font-size: 1.5em
-      font-size: 3vh
+      font-size: 1.2em
+      // font-size: 3vh
       font-family: fantasy
       border: 2px solid white
       border-radius: 10px
@@ -101,7 +109,7 @@ body
   display: flex
   flex-wrap: wrap
   color: white
-  // height: 80vh
+  height: 100%
   background-image: url('../images/the_riddler.jpg')
   background-size: cover
   // background-position: fixed
@@ -110,7 +118,6 @@ body
   // right: 0
   // bottom: 0
   top: 0
-  height: 100vh
   font-family: fantasy
   padding-top: 1.5em
   overflow: hidden
@@ -157,8 +164,9 @@ select.menu
   background-repeat: no-repeat
   background-size: cover
   bottom: 0
-  height: 100vh
-  // height: 100%
+  display: flex
+  flex: 1
+  flex-direction: column
 .backbutton
   background-image: url('http://www.getbatman.com/wp-content/uploads/2014/06/Batman-window-decal.jpg')
   background-size: cover
@@ -177,21 +185,25 @@ select.menu
   border-radius: 10px
   font-size: 3vw
 .board
-  height: 100vh
+  flex: 1
   display: flex
   flex-wrap: wrap
   // margin-left: 25vw
   // margin-right: 25vw
   // margin-right: 50%
   a
-    width: 25%
-    height: 20%
+    flex: 1
+    flex-basis: 20%
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+
   a:visited
     pointer-events:none
   .hippodrome
-    background-image: url('https://upload.wikimedia.org/wikipedia/en/e/e4/Gotham_City_in_Batman_Forever.png')
+    background-image: url('../images/hippodrome.png')
   .bank
-    background-image: url('http://vignette3.wikia.nocookie.net/superfriends/images/a/a3/GothamCityBank.jpg/revision/latest?cb=20100529181311')
+    background-image: url('../images/GothamCityBank.jpg')
   .port
     background-image: url('http://static8.comicvine.com/uploads/original/6/64770/1616843-gothamcity42.jpg')
   .penguin
@@ -233,21 +245,12 @@ select.menu
   background-size: cover
   background-position: center
   background-repeat: no-repeat
-  height: 100%
-  width: 100%
   color: white
-  display: flex
-  flex-direction: column
-  justify-content: flex-end
 .cell
   background-size: cover
   background-repeat: no-repeat
   background-position: center
   color: white
-  height: 100%
-  display: flex
-  flex-direction: column
-  justify-content: flex-end
   border: 1px solid white
 p
   margin: 0
@@ -259,7 +262,6 @@ p
   align-items: left
   align-content: left
   background-image: url('../images/the_riddler.jpg')
-  height: 100vh
   width: 100vw
   background-position: center
   background-size: cover
@@ -330,7 +332,9 @@ p
   background-size: contain
   background-repeat: no-repeat
   font-size: 2em
-  height: 100vh
+  flex: 1
+  display: flex
+  flex-direction: column
   h1
     margin-left: 45vw
     text-align: left
@@ -340,7 +344,7 @@ p
   .description
     background-color: rgba(85, 84, 80, .3)
     margin-left: 45vw
-    height: 100vh
+    flex: 1
   .filler
     margin-right: 55vw
     margin-top: -10vh
