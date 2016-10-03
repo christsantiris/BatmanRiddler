@@ -125,17 +125,17 @@ class Board extends Component {
     return (
       <div className='gotham'>
         <div className='board'>
-      {cells.map((cell, index) => {
-        if (this.props.clickedCells[index]) {
-          return <Link key={index} onClick={(e) => e.preventDefault()}>
-            <div className='empty'><p>{cell.location}</p></div>
-          </Link>
-        } else {
-          return <Link key={index} onClick={() => this.disableDiv(index)}>
-            <div className={cx(cell.className, 'cell')}><p>{cell.location}</p></div>
-          </Link>
-        }
-      })}
+          {cells.map((cell, index) => {
+            if (this.props.clickedCells[index]) {
+              return <Link key={index} onClick={(e) => e.preventDefault()}>
+                <div className='empty'><p>{cell.location}</p></div>
+              </Link>
+            } else {
+              return <Link key={index} onClick={() => this.disableDiv(index)}>
+                <div className={cx(cell.className, 'cell')}><p>{cell.location}</p></div>
+              </Link>
+            }
+          })}
         </div>
         <footer className='boardfooter'><Link to='/'><button className='backbutton' onClick={this.props.resetGame}>Reset</button></Link></footer>
         {this.notice}

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router'
 
 class Start extends Component {
 
@@ -20,6 +21,7 @@ class Start extends Component {
           <option value='hard'>Hard</option>
         </select>
         <button className='startbutton' onClick={this.props.startGame}>Start</button>
+        <Link to='/about'><button className='aboutbutton'>About</button></Link>
       </div>
     </div>
   }

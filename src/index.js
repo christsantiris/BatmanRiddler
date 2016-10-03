@@ -6,7 +6,8 @@ import {
   App,
   Start,
   Board,
-  Game
+  Game,
+  About
 } from './components'
 
 import './styles/screen.sass'
@@ -17,6 +18,7 @@ render((
       <Route path='/' component={Start} />
       <Route path='/game/:difficulty' component={Board} />
       <Route path='/game/:difficulty/:index' component={Game} />
+      <Route path='/about' component={About} />
     </Route>
   </Router>
 ), document.getElementById('root'))
