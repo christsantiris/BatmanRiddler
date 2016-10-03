@@ -92,7 +92,7 @@ class Board extends Component {
     params: React.PropTypes.object,
     location: React.PropTypes.object,
     resetGame: React.PropTypes.func,
-    clickedCells: React.PropTypes.func,
+    clickedCells: React.PropTypes.array,
     changeCell: React.PropTypes.func
   }
 

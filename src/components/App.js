@@ -67,7 +67,7 @@ class App extends Component {
   }
 
   resetGame = () => {
-    this.setState({difficulty: 'easy', questions: null, incorrectAnswers: 0, correctAnswers: 0, lose: false, clickedCells: []})
+    this.setState({difficulty: 'easy', questions: null, incorrectAnswers: 0, correctAnswers: 0, lose: false, win: false, clickedCells: []})
   }
 
   render () {

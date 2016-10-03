@@ -148,6 +148,7 @@ body
   border-radius: 10px
   font-size: 1em
   color: white
+  margin: .2em
 select.menu
   background-color: #555450
   background-size: cover
@@ -325,27 +326,23 @@ p
     opacity: 0.0
 .about
   background-image: url('../images/enigma.jpg')
-  background-size: contain
+  background-size: cover
   background-repeat: no-repeat
   font-size: 2em
   flex: 1
   display: flex
   flex-direction: column
   h1
-    margin-left: 45vw
-    text-align: left
+    // margin-left: 50vw
+    // text-align: left
     margin-bottom: 0
     margin-top: 0
-    background-color: rgba(85, 84, 80, .3)
+    background-color: rgba(85, 84, 80, .8)
+    color: white
   .description
-    background-color: rgba(85, 84, 80, .3)
-    margin-left: 45vw
+    background-color: rgba(85, 84, 80, .8)
     flex: 1
-  .filler
-    margin-right: 55vw
-    margin-top: -10vh
-    color: #6FBD47
-    background-color: rgba(85, 84, 80, .3)
+    color: white
   footer
     background-color: #555450
 
@@ -359,21 +356,47 @@ p
     height: 6em
     width: 8em
     font-size: 1.5em
+  .about
+    h1
+      font-size: .8em
+  .description
+    font-size: 1.2em
+
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
   .aboutbutton, .startbutton, select.menu
-    height: 4em
-    width: 6em
+    height: 5em
+    width: 7em
     font-size: 1.2em
+  .about
+    h1
+      font-size: .7em
+  .description
+    font-size: .5em
+
 
 /* Extra Small Devices, Phones */
-// @media only screen and (max-width : 480px)
+@media only screen and (max-width : 480px)
+  .aboutbutton, .startbutton, select.menu
+    height: 4em
+    width: 6em
+    font-size: 1em
+  .about
+    h1
+      font-size: .7em
+  .description
+    font-size: .5em
 
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
   .aboutbutton, .startbutton, select.menu
-    height: 3em
-    width: 5em
-    font-size: 1em
+    height: 4em
+    width: 6em
+    font-size: .7em
+  .about
+    h1
+      font-size: .7em
+  .description
+    font-size: .4em
