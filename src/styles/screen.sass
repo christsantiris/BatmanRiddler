@@ -144,25 +144,20 @@ body
   background-repeat: no-repeat
   background-position: center
   height: 6em
-  max-height: 20vh
   width: 9em
-  max-width: 20vw
   border-radius: 10px
+  font-size: 1em
   color: white
-  margin: .5em
-  font-size: 3vw
 select.menu
+  background-color: #555450
   background-size: cover
   background-repeat: no-repeat
   background-position: center
   height: 6em
-  max-height: 20vh
   width: 9em
-  max-width: 20vw
   border-radius: 10px
+  font-size: 1em
   color: white
-  background-color: #555450
-  font-size: 3vw
 .gotham
   background-image: url('http://sdeerwallpaper.com/Cool-Wallpapers/batman-wallpaper-background-Is-Cool-Wallpapers.jpg?7b7757')
   background-repeat: no-repeat
@@ -185,18 +180,13 @@ select.menu
   background-repeat: no-repeat
   background-position: center
   height: 6em
-  max-height: 20vh
   width: 9em
-  max-width: 20vw
   border-radius: 10px
-  font-size: 3vw
+  font-size: 1em
 .board
   flex: 1
   display: flex
   flex-wrap: wrap
-  // margin-left: 25vw
-  // margin-right: 25vw
-  // margin-right: 50%
   a
     flex: 1
     flex-basis: 20%
@@ -358,3 +348,32 @@ p
     background-color: rgba(85, 84, 80, .3)
   footer
     background-color: #555450
+
+
+/* Large Devices, Wide Screens */
+// @media only screen and (max-width : 1200px)
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+  .aboutbutton, .startbutton, select.menu
+    height: 6em
+    width: 8em
+    font-size: 1.5em
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+  .aboutbutton, .startbutton, select.menu
+    height: 4em
+    width: 6em
+    font-size: 1.2em
+
+/* Extra Small Devices, Phones */
+// @media only screen and (max-width : 480px)
+
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+  .aboutbutton, .startbutton, select.menu
+    height: 3em
+    width: 5em
+    font-size: 1em
