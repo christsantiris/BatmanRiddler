@@ -2,4 +2,4 @@
 #TODO
 - Explorer mode vs strict mode
 - convert to mobx
-- win modal reset position
+- modal reset button moved

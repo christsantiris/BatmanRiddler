@@ -82,8 +82,8 @@ class App extends Component {
       </main>
       {/* <div className={cx('modal', { 'hidden': !this.state.win })} />
       <div className={cx('losemodal', { 'hidden': !this.state.lose })} /> */}
-      <div className={cx('modal', { 'hidden': !this.state.win })}><Link to='/'><button className='backbutton' onClick={this.resetGame}>Reset</button></Link></div>
-      <div className={cx('losemodal', { 'hidden': !this.state.lose })}><Link to='/'><button className='backbutton' onClick={this.resetGame}>Reset</button></Link></div>
+      <div className={cx('modal', { 'hidden': !this.state.win })}><Link to='/'><button className='resetbutton' onClick={this.resetGame}>Reset</button></Link></div>
+      <div className={cx('losemodal', { 'hidden': !this.state.lose })}><Link to='/'><button className='resetbutton' onClick={this.resetGame}>Reset</button></Link></div>
     </div>
   }
 }
