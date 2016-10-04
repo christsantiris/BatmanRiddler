@@ -6,12 +6,12 @@ html
 body
   @include font-smoothing(on)
   margin: 0
-  height: 100vh
+  min-height: 100vh
 #root
-  height: 100vh
+  min-height: 100vh
 .startscreen
   text-align: center
-  height: 100vh
+  min-height: 100vh
   display: flex
   flex-direction: column
 
@@ -39,7 +39,7 @@ body
       width: 40vw
     .correct
       color: white
-      font-size: 1.2em
+      font-size: 1em
       // font-size: 3vh
       font-family: fantasy
       border: 2px solid white
@@ -53,7 +53,7 @@ body
       // background-color: #555450
     .incorrect
       color: white
-      font-size: 1.2em
+      font-size: 1em
       // font-size: 3vh
       font-family: fantasy
       border: 2px solid white
@@ -106,29 +106,19 @@ body
   &.hidden
     display: none
 .startgame
-  display: flex
-  flex-wrap: wrap
   color: white
-  height: 100%
+  min-height: 100%
+  width: 100%
   background-image: url('../images/the_riddler.jpg')
   background-size: cover
-  // background-position: fixed
-  // background-attachment: fixed
-  // left: 0
-  // right: 0
-  // bottom: 0
   top: 0
   font-family: fantasy
   padding-top: 1.5em
-  overflow: hidden
   p
-    // font-size: 1.5em
     font-size: 3vh
     font-weight: bolder
     margin-left: 5%
     font-family: helvetica
-  // .left
-  //   margin-right: 50vw
   .batman
     background-image: url('../images/bigbatman.png')
     background-repeat: no-repeat

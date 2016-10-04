@@ -10,7 +10,7 @@ const BUILD_PATH = path.resolve(ROOT_PATH, 'build')
 
 module.exports = {
   entry: [
-    SOURCE_PATH
+    'whatwg-fetch', SOURCE_PATH
   ],
   output: {
     filename: 'bundle.js',
