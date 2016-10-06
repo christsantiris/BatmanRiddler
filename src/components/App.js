@@ -56,13 +56,13 @@ class App extends Component {
     }
   }
 
-  incrementIncorrect = () => {
+  incrementIncorrect = (correctAnswer) => {
     const newScore = this.state.incorrectAnswers + 1
     this.setState({ incorrectAnswers: newScore, lose: newScore >= 4 })
     if (newScore >= 5) {
       this.setState({ lose: true })
     } else if (newScore) {
-      browserHistory.push(`/game/${this.state.difficulty}?a=i`)
+      browserHistory.push(`/game/${this.state.difficulty}?a=i&answer=${correctAnswer}`)
     }
   }
 

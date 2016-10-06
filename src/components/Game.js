@@ -30,9 +30,9 @@ class Game extends Component {
         </p>
         {shuffle([
           <button className='choice' onClick={this.props.incrementCorrect} key={0}> <span dangerouslySetInnerHTML={{__html: question.correct_answer}} /></button>,
-          <button className='choice' onClick={this.props.incrementIncorrect} key={1}> <span dangerouslySetInnerHTML={{__html: question.incorrect_answers[0]}} /></button>,
-          <button className='choice' onClick={this.props.incrementIncorrect} key={2}> <span dangerouslySetInnerHTML={{__html: question.incorrect_answers[1]}} /></button>,
-          <button className='choice' onClick={this.props.incrementIncorrect} key={3}> <span dangerouslySetInnerHTML={{__html: question.incorrect_answers[2]}} /></button>
+          <button className='choice' onClick={this.props.incrementIncorrect.bind(this, question.correct_answer)} key={1}> <span dangerouslySetInnerHTML={{__html: question.incorrect_answers[0]}} /></button>,
+          <button className='choice' onClick={this.props.incrementIncorrect.bind(this, question.correct_answer)} key={2}> <span dangerouslySetInnerHTML={{__html: question.incorrect_answers[1]}} /></button>,
+          <button className='choice' onClick={this.props.incrementIncorrect.bind(this, question.correct_answer)} key={3}> <span dangerouslySetInnerHTML={{__html: question.incorrect_answers[2]}} /></button>
         ])}
       </div>
     } else {

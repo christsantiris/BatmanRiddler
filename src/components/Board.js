@@ -9,7 +9,7 @@ const cells = [
   },
   {
     className: 'port',
-    location: 'Gotham City Port'
+    location: 'Gotham Port'
   },
   {
     className: 'arkham',
@@ -17,7 +17,7 @@ const cells = [
   },
   {
     className: 'bank',
-    location: 'Gotham City Bank'
+    location: 'Gotham Bank'
   },
   {
     className: 'falcone',
@@ -29,23 +29,23 @@ const cells = [
   },
   {
     className: 'park',
-    location: 'Gotham Amusement Park'
+    location: 'Amusement Park'
   },
   {
     className: 'powerplant',
-    location: 'Gotham Power Plant'
+    location: 'Power Plant'
   },
   {
     className: 'jail',
-    location: 'Gotham City Jail'
+    location: 'Gotham Jail'
   },
   {
     className: 'sewer',
-    location: 'Gotham City Sewer'
+    location: 'Gotham Sewer'
   },
   {
     className: 'warehouse',
-    location: 'An Abandoned Warehouse'
+    location: 'Abandoned Warehouse'
   },
   {
     className: 'joker',
@@ -77,7 +77,7 @@ const cells = [
   },
   {
     className: 'traintracks',
-    location: 'Gotham Railroad Tracks'
+    location: 'Railroad Tracks'
   },
   {
     className: 'hippodrome',
@@ -115,7 +115,7 @@ class Board extends Component {
   get notice () {
     switch (this.props.location.query.a) {
       case 'i':
-        return <div className='notice incorrect' >Your answer was incorrect!</div>
+        return <div className='notice incorrect' >Your answer was incorrect! The correct answer is {this.props.location.query.answer}</div>
       case 'c':
         return <div className='notice correct' >Your answer was correct!</div>
     }
@@ -132,7 +132,7 @@ class Board extends Component {
               </Link>
             } else {
               return <Link key={index} onClick={() => this.disableDiv(index)} className={cx(cell.className, 'cell')}>
-                <p>{cell.location}</p>
+                <p className='labelcell'>{cell.location}</p>
               </Link>
             }
           })}
