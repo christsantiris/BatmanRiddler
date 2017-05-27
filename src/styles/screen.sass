@@ -168,7 +168,8 @@ select.menu
   color: white
   background-image: url('../images/questionmark.jpg')
 .gotham
-  background-image: url('../images/batmanwallpaper.jpg')
+  // background-image: url('../images/batmanwallpaper.jpg')
+  background-color: #11120D
   background-repeat: no-repeat
   background-size: cover
   bottom: 0
@@ -206,6 +207,8 @@ select.menu
   flex: 1
   display: flex
   flex-wrap: wrap
+  padding-left: 70px
+  padding-right: 70px
   a
     flex: 1
     flex-basis: 20%
@@ -401,6 +404,9 @@ p
     height: 18em
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
+  .board
+    padding-left: 0px
+    padding-right: 0px
   .aboutbutton, .startbutton, select.menu, .resetbutton
     height: 5em
     width: 7em
@@ -416,6 +422,9 @@ p
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
+  .board
+    padding-left: 0px
+    padding-right: 0px
   .aboutbutton, .startbutton, select.menu, .resetbutton
     height: 4em
     width: 6em
@@ -428,6 +437,9 @@ p
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
+  .board
+    padding-left: 0px
+    padding-right: 0px
   .aboutbutton, .startbutton, select.menu, .resetbutton
     height: 4em
     width: 6em
